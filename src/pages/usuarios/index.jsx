@@ -3,9 +3,9 @@ import React from 'react'
 const IndexUsuarios = () => {
     return (
         <div>
-            Todos los usuarios
+            <h1>usuarios</h1>
         </div>
     )
 }
 
-export default IndexUsuarios;
+export {IndexUsuarios};
