@@ -4,9 +4,9 @@ import { Sidebar } from "../components/sidebar.jsx";
 
 const Layout = () => {
     return (
-        <div>
+        <div className="layout">
             <Sidebar />
-            <Outlet />
+            <main className="Outlet"><Outlet /></main>
         </div>
     )
 }

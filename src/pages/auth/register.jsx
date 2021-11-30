@@ -7,7 +7,7 @@ const Register = () => {
             <form className="formulario">
                 <div className="interno">
                     <ul>
-                        <li><h1>Registro</h1></li>                 
+                        <li><h1 className="h1">Registro</h1></li>                 
                     </ul>
                     <ul className="registro">
                         <li><p className="p">Nombres</p></li>

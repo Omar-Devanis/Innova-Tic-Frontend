@@ -7,7 +7,7 @@ const Login = () => {
         <div>
             <form className="formulario">
                 <ul className="interno">
-                    <li><h1>Inicio de sesión</h1></li>
+                    <li><h1 className= "h1">Inicio de sesión</h1></li>
                     <li><input className="inputs" type="email" placeholder="Correo electronico" /></li>
                     <li><input className="inputs" type="password" placeholder="Contraseña" /></li>
                     <li><button className="boton">Iniciar sesión</button></li>
