@@ -6,14 +6,14 @@ import { Register } from "./pages/auth/register.jsx";
 import { Layout } from "./layouts/layout.jsx";
 import { IndexUsuarios } from "./pages/usuarios/index.jsx";
 
-const httpLink = createHttpLink({
-  uri: "http://servidor-gql-innovatic.herokuapp.com/graphql"
-})
+//const httpLink = createHttpLink({
+//  uri: "http://servidor-gql-innovatic.herokuapp.com/graphql"
+//})
 
 const client = new ApolloClient({
-  uri: httpLink,
+  uri: "http://localhost:4000/graphql",
   cache: new InMemoryCache()
-})
+});
 
 function App() {
   return (
