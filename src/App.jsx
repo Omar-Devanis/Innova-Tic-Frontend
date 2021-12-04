@@ -1,32 +1,66 @@
 import './styles/style.css';
+import { useState } from 'react';
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache} from "@apollo/client";
 import { BrowserRouter, Route, Routes,  } from "react-router-dom";
 import { Login } from "./pages/auth/login.jsx";
 import { Register } from "./pages/auth/register.jsx";
 import { Layout } from "./layouts/layout.jsx";
 import { IndexUsuarios } from "./pages/usuarios/index.jsx";
+import { setContext } from '@apollo/client/link/context';
+import { AuthContext } from './context/authContext.js'
 
-//const httpLink = createHttpLink({
-//  uri: "http://servidor-gql-innovatic.herokuapp.com/graphql"
-//})
+// import PrivateRoute from 'components/PrivateRoute';
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:4000/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = JSON.parse(localStorage.getItem('token'));
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  link: authLink.concat(httpLink),
 });
 
 function App() {
+  //const [userData, setUserData] = useState({});
+  const [authToken, setAuthToken] = useState('');
+  const [loadingAuth, setLoadingAuth] = useState(true);
+
+  const setToken = (data) => {
+    setAuthToken(data);
+    console.log('dt token', data);
+    if (data) {
+      localStorage.setItem('token', JSON.stringify(data));
+    } else {
+      localStorage.removeItem('token');
+    }
+    setLoadingAuth(false);
+  };
+
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
-        <Routes>
-          <Route path='register' element={<Register />} />
-          <Route path='login' element={<Login />} />
-          <Route path='admin' element={<Layout />} >
-            <Route path='usuarios' element={<IndexUsuarios />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <AuthContext.Provider value={{ authToken, setToken, loadingAuth }}>
+          <BrowserRouter>
+            <Routes>
+              <Route path='register' element={<Register />} />
+              <Route path='login' element={<Login />} />
+              <Route path='admin' element={<Layout />} >
+                <Route path='usuarios' element={<IndexUsuarios />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+      </AuthContext.Provider>
     </ApolloProvider>
   );
 }
