@@ -8,6 +8,8 @@ import { Layout } from "./layouts/layout.jsx";
 import { IndexUsuarios } from "./pages/usuarios/index.jsx";
 import { setContext } from '@apollo/client/link/context';
 import { AuthContext } from './context/authContext.js'
+import { IndexPerfil } from "./pages/perfil/index"
+import { UserContext } from './context/userContext.js'
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -33,7 +35,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  //const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState({});
   const [authToken, setAuthToken] = useState('');
   const [loadingAuth, setLoadingAuth] = useState(true);
 
@@ -50,16 +52,19 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <AuthContext.Provider value={{ authToken, setToken, loadingAuth }}>
+      <AuthContext.Provider value={{ authToken, setToken, setAuthToken, loadingAuth }}>
+        <UserContext.Provider value={{userData, setUserData}}>
           <BrowserRouter>
             <Routes>
               <Route path='register' element={<Register />} />
               <Route path='login' element={<Login />} />
               <Route path='admin' element={<Layout />} >
                 <Route path='usuarios' element={<IndexUsuarios />} />
+                <Route path='perfil' element={<IndexPerfil />} />
               </Route>
             </Routes>
           </BrowserRouter>
+        </UserContext.Provider>
       </AuthContext.Provider>
     </ApolloProvider>
   );
