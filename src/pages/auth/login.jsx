@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom'
 import { Input } from "../../components/input.jsx";
 import { ButtonLoading } from "../../components/botonRe.jsx";
 import { useFormData } from "../../hooks/useFormData.jsx";
 import { LOGIN } from "../../graphql/auth/mutations.js";
 import { useNavigate } from "react-router";
+import { useAuth } from "../../context/authContext.js"
+import { useMutation } from "@apollo/client";
 
 
 const Login = () => {
