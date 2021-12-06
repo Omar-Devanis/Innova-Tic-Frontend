@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Input } from "../../components/input.jsx";
 import { ButtonLoading } from "../../components/botonRe.jsx";
 import { useMutation } from "@apollo/client";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { useFormData } from "../../hooks/useFormData.jsx";
 import { useAuth } from "../../context/authContext.js"
 import { REGISTRO } from "../../graphql/auth/mutations.js"
