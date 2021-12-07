@@ -25,11 +25,11 @@ const Register = () => {
 
     useEffect(() => {
         if (dataMutation) {
-          if (dataMutation.registro.error) {
-            console.error('MOSTRAR MENSAJE DE ERROR AQUI');
+          if (dataMutation.registro.token) {
+            setToken(dataMutation.registro.token);
+            navigate('/admin/perfil');
+            
           }
-          setToken(dataMutation.registro.token);
-          navigate('/');
         }
       }, [dataMutation, setToken, navigate]);
 

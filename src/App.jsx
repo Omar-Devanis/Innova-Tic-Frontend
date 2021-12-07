@@ -37,22 +37,20 @@ const client = new ApolloClient({
 function App() {
   const [userData, setUserData] = useState({});
   const [authToken, setAuthToken] = useState('');
-  const [loadingAuth, setLoadingAuth] = useState(true);
+  //const [loadingAuth, setLoadingAuth] = useState(true);
 
-  const setToken = (data) => {
-    setAuthToken(data);
-    console.log('dt token', data);
-    if (data) {
-      localStorage.setItem('token', JSON.stringify(data));
-    } else {
-      localStorage.removeItem('token');
-    }
-    setLoadingAuth(false);
+  const setToken = (token) => {
+    setAuthToken(token);
+    console.log('dt token', token); 
+    if (token) {
+      localStorage.setItem('token', JSON.stringify(token));
+    } 
+  //  setLoadingAuth(false);
   };
 
   return (
     <ApolloProvider client={client}>
-      <AuthContext.Provider value={{ authToken, setToken, setAuthToken, loadingAuth }}>
+      <AuthContext.Provider value={{ authToken, setAuthToken, setToken }}>
         <UserContext.Provider value={{userData, setUserData}}>
           <BrowserRouter>
             <Routes>

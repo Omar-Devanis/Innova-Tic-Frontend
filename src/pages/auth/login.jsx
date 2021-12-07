@@ -12,7 +12,7 @@ import { useMutation } from "@apollo/client";
 const Login = () => {
     const { setToken } = useAuth();
     const {form, formData, updateFormData} = useFormData();
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [login, { data: dataMutation, loading: loadingMutation, error: errorMutation }] =
         useMutation(LOGIN);
@@ -24,11 +24,10 @@ const Login = () => {
 
     useEffect(() => {
         if (dataMutation) {
-          if (dataMutation.login.error) {
-            console.error('MOSTRAR MENSAJE DE ERROR AQUI');
-          }
-          setToken(dataMutation.login.token);
-          navigate('/admin/perfil');
+          if (dataMutation.login.token) {
+            setToken(dataMutation.login.token);
+            navigate('/admin/perfil');
+          }    
         }
       }, [dataMutation, setToken, navigate]);
 
