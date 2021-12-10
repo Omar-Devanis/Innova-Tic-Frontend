@@ -11,9 +11,9 @@ import { DropDown } from "../../components/dropDown.js";
 import { Enum_Rol } from "../../utils/enums.js";
 
 const Register = () => {
-    const { form, formData, updateFormData } = useFormData(null);
+    const { form, formData, updateFormData } = useFormData();
     const { setToken } = useAuth();
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [registro, { data: dataMutation, loading: loadingMutation, error: errorMutation }] =
         useMutation(REGISTRO);
@@ -38,15 +38,15 @@ const Register = () => {
             <h1 className='h1'>Registro</h1> 
             <form className='formulario' onSubmit={submitForm} onChange={updateFormData} ref={form}>
                 <div className='interno'>              
-                    <Input label='Nombre' name='nombre' type='text' placeholder='nombre' required />
-                    <Input label='Apellido' name='apellido' type='text' placeholder='apellido' required />
-                    <Input label='Documento' name='identificacion' type='text' placeholder='documento de identidad' required />
+                    <Input label='Nombre' name='nombre' type='text' placeholder='nombre' required={true} />
+                    <Input label='Apellido' name='apellido' type='text' placeholder='apellido' required={true} />
+                    <Input label='Documento' name='identificacion' type='text' placeholder='documento de identidad' required={true} />
                     <DropDown label='Rol deseado' name='rol' required={true} options={Enum_Rol} />
-                    <Input label='Correo' name='correo' type='email' placeholder='correo electronico' required />
-                    <Input label='Contraseña' name='password' type='password' placeholder='contraseña' required />
+                    <Input label='Correo' name='correo' type='email' placeholder='correo electronico' required={true} />
+                    <Input label='Contraseña' name='password' type='password' placeholder='contraseña' required={true} />
                     <ButtonLoading
                     disabled={Object.keys(formData).length === 0}
-                    loading={false}
+                    loading={loadingMutation}
                     text='Registrar'
                     />
                 </div>    

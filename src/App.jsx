@@ -4,6 +4,7 @@ import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache} from "@apo
 import { BrowserRouter, Route, Routes,  } from "react-router-dom";
 import { Login } from "./pages/auth/login.jsx";
 import { Register } from "./pages/auth/register.jsx";
+import { IndexPrinciPal } from "./pages/index.jsx";
 import { Layout } from "./layouts/layout.jsx";
 import { IndexUsuarios } from "./pages/usuarios/index.jsx";
 import { setContext } from '@apollo/client/link/context';
@@ -37,23 +38,26 @@ const client = new ApolloClient({
 function App() {
   const [userData, setUserData] = useState({});
   const [authToken, setAuthToken] = useState('');
-  //const [loadingAuth, setLoadingAuth] = useState(true);
+  const [loadingAuth, setLoadingAuth] = useState(true);
 
   const setToken = (token) => {
     setAuthToken(token);
     console.log('dt token', token); 
     if (token) {
       localStorage.setItem('token', JSON.stringify(token));
-    } 
-  //  setLoadingAuth(false);
+    }else {
+      localStorage.removeItem('token');
+    }
+    setLoadingAuth(false);
   };
 
   return (
     <ApolloProvider client={client}>
-      <AuthContext.Provider value={{ authToken, setAuthToken, setToken }}>
+      <AuthContext.Provider value={{ authToken, setAuthToken, setToken, loadingAuth }}>
         <UserContext.Provider value={{userData, setUserData}}>
           <BrowserRouter>
             <Routes>
+              <Route path='' element={<IndexPrinciPal />} />
               <Route path='register' element={<Register />} />
               <Route path='login' element={<Login />} />
               <Route path='admin' element={<Layout />} >

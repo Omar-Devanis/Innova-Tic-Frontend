@@ -20,9 +20,9 @@ const Logout = () => {
       setToken(null);
     };
     return (
-      <li>
-        <NavLink to='/auth/login' className=''>
-          <div className='' onClick={() => deleteToken()}>
+      <li onClick={() => deleteToken()}>
+        <NavLink to='/login' className=''>
+          <div className='' >
             <button>Cerrar sesión</button>
           </div>
         </NavLink>

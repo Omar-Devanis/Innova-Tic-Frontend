@@ -38,3 +38,4 @@ div= flex items-center
 else {
       localStorage.removeItem('token');
     }
+    , setLoadingAuth, navigate

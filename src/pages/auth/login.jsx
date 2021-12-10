@@ -36,11 +36,11 @@ const Login = () => {
             <h1 className= "h1">Inicio de sesión</h1>
             <form className="formulario" onSubmit={submitForm} onChange={updateFormData} ref={form}>
                 <div className='interno' >
-                    <Input label='Correo' name='correo' type='email' required />
-                    <Input label='Contraseña' name='password' type='password' required />
+                    <Input label='Correo' name='correo' type='email' required={true} />
+                    <Input label='Contraseña' name='password' type='password' required={true} />
                     <ButtonLoading
                     disabled={Object.keys(formData).length === 0}
-                    loading={false}
+                    loading={loadingMutation}
                     text='Iniciar sesión'
                     />
                 </div>
