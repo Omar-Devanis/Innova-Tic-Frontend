@@ -30,14 +30,14 @@
     border: solid 1px;
     border-radius: 4px;
     height: 35px;
-    background-color: rgb(6, 112, 38);
+    background-color: rgb(250, 32, 32);
     color: white;
     font-weight: 950;
 }
 .boton:hover{
     cursor: pointer;
     transform: scale(1.02);
-    background-color: rgb(6, 95, 40);
+    background-color: rgb(250, 12, 12);
 }
 
 .inputs{
@@ -115,4 +115,30 @@
     overflow-y: scroll;
 }
 
-
+.tabla {
+    width: 100%;
+    margin: 10px;
+    overflow-y: scroll;
+  }
+  
+.tabla td,
+.tabla th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+  
+.tabla th {
+    background-color: rgb(250, 32, 32);
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+  
+.tabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+  
+.tabla tr:hover {
+    background-color: #ddd;
+}

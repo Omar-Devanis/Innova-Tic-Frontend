@@ -39,3 +39,5 @@ else {
       localStorage.removeItem('token');
     }
     , setLoadingAuth, navigate
+
+i{text-yellow-600 hover:text-yellow-400 cursor-pointer}
