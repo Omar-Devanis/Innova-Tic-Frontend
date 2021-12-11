@@ -26,7 +26,7 @@ const Layout = () => {
                 setToken(dataMutation.validateToken.token);
             } else {
                 setToken(null);
-                navigate('/login');
+                navigate('/auth/login');
             }
             //setLoadingAuth(false);
         }

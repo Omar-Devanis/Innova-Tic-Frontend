@@ -53,7 +53,7 @@ const Register = () => {
             </form>
             <div className='enlace'>
                 <span className='p'>Tienes cuenta?</span>
-                <Link to='/login'>
+                <Link to='/auth/login'>
                     <span className='p'>Inicia sesión</span>
                 </Link>
             </div>

@@ -6,6 +6,7 @@ import { Login } from "./pages/auth/login.jsx";
 import { Register } from "./pages/auth/register.jsx";
 import { IndexPrinciPal } from "./pages/index.jsx";
 import { Layout } from "./layouts/layout.jsx";
+import { AuthLayout } from "./layouts/authLayout.jsx";
 import { IndexUsuarios } from "./pages/usuarios/index.jsx";
 import { setContext } from '@apollo/client/link/context';
 import { AuthContext } from './context/authContext.js'
@@ -74,8 +75,10 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path='' element={<IndexPrinciPal />} />
-              <Route path='register' element={<Register />} />
-              <Route path='login' element={<Login />} />
+              <Route path='auth' element={<AuthLayout />} >
+                <Route path='register' element={<Register />} />
+                <Route path='login' element={<Login />} />
+              </Route>
               <Route path='admin' element={<Layout />} >
                 <Route path='usuarios' element={<IndexUsuarios />} />
                 <Route path='perfil' element={<IndexPerfil />} />
