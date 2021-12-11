@@ -41,9 +41,9 @@ const Register = () => {
                     <Input label='Nombre' name='nombre' type='text' placeholder='nombre' required={true} />
                     <Input label='Apellido' name='apellido' type='text' placeholder='apellido' required={true} />
                     <Input label='Documento' name='identificacion' type='text' placeholder='documento de identidad' required={true} />
-                    <DropDown label='Rol deseado' name='rol' required={true} options={Enum_Rol} />
                     <Input label='Correo' name='correo' type='email' placeholder='correo electronico' required={true} />
                     <Input label='Contraseña' name='password' type='password' placeholder='contraseña' required={true} />
+                    <DropDown label='Rol deseado' name='rol' required={true} options={Enum_Rol} />
                     <ButtonLoading
                     disabled={Object.keys(formData).length === 0}
                     loading={loadingMutation}

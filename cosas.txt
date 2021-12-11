@@ -41,3 +41,6 @@ else {
     , setLoadingAuth, navigate
 
 i{text-yellow-600 hover:text-yellow-400 cursor-pointer}
+
+data-testid="not-authorized" className='text-9xl text-red-500 '
+

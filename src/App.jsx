@@ -11,6 +11,8 @@ import { setContext } from '@apollo/client/link/context';
 import { AuthContext } from './context/authContext.js'
 import { IndexPerfil } from "./pages/perfil/index"
 import { UserContext } from './context/userContext.js'
+import { useEffect } from 'react/cjs/react.development';
+import jwt_decode from "jwt-decode";
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -50,6 +52,20 @@ function App() {
     }
     setLoadingAuth(false);
   };
+
+  useEffect(() =>{ 
+    if(authToken){
+      const decoded = jwt_decode(authToken);
+      setUserData({
+        _id: decoded._id,
+        nombre: decoded.nombre,
+        apellido: decoded.apellido,
+        identificacion: decoded.identificacion,
+        correo: decoded.correo,
+        rol: decoded.rol,
+      });
+    }
+  }, [authToken])
 
   return (
     <ApolloProvider client={client}>

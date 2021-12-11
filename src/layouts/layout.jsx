@@ -5,6 +5,7 @@ import { useAuth } from '../context/authContext.js';
 import { VALIDATE_TOKEN } from '../graphql/auth/mutations.js';
 import { useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
+import { Navbar } from "../components/navbar.jsx";
 
 const Layout = () => {
     const navigate = useNavigate();
@@ -45,8 +46,13 @@ const Layout = () => {
 
     return (
         <div className="layout">
-            <Sidebar />
-            <main className="Outlet"><Outlet /></main>
+            <Sidebar />                 
+            <main className="Outlet">
+                <Navbar />
+                <div className='main'>
+                <Outlet />
+                </div>
+            </main>     
         </div>
     )
 }

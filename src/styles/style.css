@@ -27,7 +27,7 @@
 }
 
 .boton{
-    border: solid 1px;
+    border: none;
     border-radius: 4px;
     height: 35px;
     background-color: rgb(250, 32, 32);
@@ -45,11 +45,9 @@
     height: 35px;
     border-radius: 4px;
     border: solid 1px grey;
+    padding-left: 8px;
 }
 
-.inputs:focus-within{
-    border: 2px blue;
-}
 
 .enlace {
     display: flex;
@@ -73,24 +71,46 @@
 .label{
     display: flex;
     flex-direction: column;
+    padding-left: 0px;
 }
 .label>span{
     font-weight: 1000;
     color: rgb(68, 67, 67);
 }
 
+.main{
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(126, 3, 3);
+    height: 3rem;
+    padding: 0.5rem;
+}
+.inputnav{
+    padding-left: 8px;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    width: 15rem; 
+}
 
 .sidebar{
     display: flex;
     flex-direction: column;
+    border-right: solid 2px rgb(90, 2, 2);
     width: 18rem;
-    background-color: rgb(58, 58, 58);
+    background-color: rgb(126, 3, 3);
     gap: 10px;
     padding: 1rem;
 }
 .sidebar>button{
     border: none;
-    background-color: rgb(78, 77, 77);
+    background-color: rgb(252, 53, 53);
     color: white;
     font-weight: 800;
     border-radius: 3px;
@@ -105,14 +125,17 @@
 
 .layout{
     display: flex;
+    justify-content: space-between;
     width: 100vw;
     height: 100vh;
  
 }
 .Outlet{
     display: flex;
+    flex-direction: column;
     width: 100%;
-    overflow-y: scroll;
+    height: 100%;
+    overflow-y: hidden;
 }
 
 .tabla {
