@@ -102,22 +102,23 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    width: 18rem;
+    width: 15rem;
     background-color: rgb(126, 3, 3);
     gap: 10px;
     padding: 1rem;
 }
-.sidebar>button{
+.botonRuta{
     border: none;
     background-color: rgb(252, 53, 53);
     color: white;
     font-weight: 800;
     border-radius: 3px;
     padding: 0.125rem;
+    width: 95%;
     /*display: flex;
     align-items: flex-start;*/
 }
-.sidebar>button:hover{
+.botonRuta:hover{
     cursor: pointer;
     transform: scale(1.02);
 }

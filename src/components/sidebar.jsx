@@ -1,14 +1,25 @@
 import React from 'react'
 import { PrivateComponent } from "./PrivateComponent";
+import { Ruta } from './ruta.jsx'
 
 const Sidebar = () => {
     return (
         <nav class="sidebar">
-            <button>Perfil</button>
+            <Ruta ruta='/perfil' nombre='Perfil' />
             <PrivateComponent roleList={["ADMINISTRADOR"]}>
-              <button>Proyectos</button>
+              <Ruta ruta='/admin/usuarios' nombre='Usuarios'/>
+              <Ruta ruta='/admin/proyectos' nombre='Proyectos' />
             </PrivateComponent>
-            <button>Usuarios</button>
+            <PrivateComponent roleList={["LIDER"]}>
+                <Ruta ruta='/lider/misProyectos' nombre='Mis proyectos' />
+                <Ruta ruta='/lider/estudiantes' nombre='Estudiantes' />
+                <Ruta ruta='/lider/crearProyecto' nombre='Crear proyecto' />
+            </PrivateComponent>
+            <PrivateComponent roleList={["ESTUDIANTE"]}>
+                <Ruta ruta='/user/todosLosProyectos' nombre='Proyectos' />
+                <Ruta ruta='/user/ProyectosInscrit' nombre='Proyectos inscritos' />
+
+            </PrivateComponent>
         </nav> 
 
     );

@@ -44,3 +44,8 @@ i{text-yellow-600 hover:text-yellow-400 cursor-pointer}
 
 data-testid="not-authorized" className='text-9xl text-red-500 '
 
+className='w-full h-full  overflow-y-scroll'
+flex w-full h-full
+flex flex-col md:flex-row flex-no-wrap h-screen
+
+border-right: solid 2px rgb(90, 2, 2);

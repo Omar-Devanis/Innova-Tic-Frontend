@@ -7,13 +7,20 @@ import { Register } from "./pages/auth/register.jsx";
 import { IndexPrinciPal } from "./pages/index.jsx";
 import { Layout } from "./layouts/layout.jsx";
 import { AuthLayout } from "./layouts/authLayout.jsx";
-import { IndexUsuarios } from "./pages/usuarios/index.jsx";
+import { IndexUsuarios } from "./pages/usuarios/admin/usuarios.jsx";
+import { AdminProyectos } from "./pages/proyectos/admin/proyectos.jsx"
 import { setContext } from '@apollo/client/link/context';
 import { AuthContext } from './context/authContext.js'
 import { IndexPerfil } from "./pages/perfil/index"
 import { UserContext } from './context/userContext.js'
 import { useEffect } from 'react/cjs/react.development';
 import jwt_decode from "jwt-decode";
+import { MisProyectos } from "./pages/proyectos/lider/misProyectos.jsx"
+import { CrearProyecto } from "./pages/proyectos/lider/crearProyecto.jsx"
+import { UsuariosEst } from "./pages/usuarios/lider/usuariosEst.jsx"
+import { ProyectosUser } from "./pages/proyectos/estudiante/proyectosUser.jsx"
+import { ProyectosInscrit } from "./pages/proyectos/estudiante/proyectosInscrit.jsx"
+
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -79,9 +86,15 @@ function App() {
                 <Route path='register' element={<Register />} />
                 <Route path='login' element={<Login />} />
               </Route>
-              <Route path='admin' element={<Layout />} >
-                <Route path='usuarios' element={<IndexUsuarios />} />
+              <Route path='' element={<Layout />} >
                 <Route path='perfil' element={<IndexPerfil />} />
+                <Route path='admin/usuarios' element={<IndexUsuarios />} />
+                <Route path='admin/proyectos' element={<AdminProyectos />} />
+                <Route path='lider/misProyectos' element={<MisProyectos />} />
+                <Route path='lider/crearProyecto' element={<CrearProyecto />} />
+                <Route path='lider/estudiantes' element={<UsuariosEst />} />
+                <Route path='user/todosLosProyectos' element={<ProyectosUser />} />
+                <Route path='user/proyectosInscrit' element={<ProyectosInscrit />} />
               </Route>
             </Routes>
           </BrowserRouter>

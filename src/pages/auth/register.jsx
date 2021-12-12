@@ -27,7 +27,7 @@ const Register = () => {
         if (dataMutation) {
           if (dataMutation.registro.token) {
             setToken(dataMutation.registro.token);
-            navigate('/admin/perfil');
+            navigate('/perfil');
             
           }
         }

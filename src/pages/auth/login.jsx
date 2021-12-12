@@ -26,7 +26,7 @@ const Login = () => {
         if (dataMutation) {
           if (dataMutation.login.token) {
             setToken(dataMutation.login.token);
-            navigate('/admin/perfil');
+            navigate('/perfil');
           }    
         }
       }, [dataMutation, setToken, navigate]);

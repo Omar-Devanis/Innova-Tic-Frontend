@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_USUARIOS } from "../../graphql/usuarios/queries.jsx";
+import { GET_USUARIOS } from "../../../graphql/usuarios/queries.jsx";
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-import { Enum_Rol, Enum_EstadoUsuario } from '../../utils/enums.js';
-import { PrivateRoute } from '../../components/PrivateRoute.jsx';
+import { Enum_Rol, Enum_EstadoUsuario } from '../../../utils/enums.js';
+import { PrivateRoute } from '../../../components/PrivateRoute.jsx';
 
 
 const IndexUsuarios = () => {
