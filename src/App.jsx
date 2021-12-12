@@ -1,10 +1,11 @@
 import './styles/style.css';
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache} from "@apollo/client";
-import { BrowserRouter, Route, Routes,  } from "react-router-dom";
+import { BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import { Login } from "./pages/auth/login.jsx";
 import { Register } from "./pages/auth/register.jsx";
 import { Layout } from "./layouts/layout.jsx";
 import { IndexUsuarios } from "./pages/usuarios/index.jsx";
+import { Sidebar } from './components/sidebar';
 
 const httpLink = createHttpLink({
   uri: "http://servidor-gql-innovatic.herokuapp.com/graphql"
@@ -18,15 +19,17 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
+      <Router>
+        <Sidebar/>
         <Routes>
-          <Route path='register' element={<Register />} />
-          <Route path='login' element={<Login />} />
-          <Route path='admin' element={<Layout />} >
-            <Route path='usuarios' element={<IndexUsuarios />} />
-          </Route>
+          <Route path='/' exact /> 
+          <Route path='/register' element={<Register />} exact/>
+          <Route path='/login' element={<Login />} exact/>
+          {/* <Route path='/admin' element={<Layout />} exact>
+            <Route path='/usuarios' element={<IndexUsuarios />} exact/>
+          </Route> */}
         </Routes>
-      </BrowserRouter>
+      </Router>
     </ApolloProvider>
   );
 }
