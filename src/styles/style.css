@@ -191,3 +191,30 @@
 .icon:hover{
     color: rgb(85, 85, 252);
 }
+
+.proyectoEst{
+    display: flex;
+    flex-wrap: wrap;
+    padding:20px;
+}
+
+.btn{
+    height:30px;
+    padding:10px;
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    
+}
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:10px;
+    background-color:#dcd6f7;
+    border-radius:5px;
+    width:80%;
+    margin:0 10px 0 0;
+
+}
