@@ -8,13 +8,19 @@ const ProyectosInscrit = () => {
 
 
     useEffect(() => {
-        if (error) {
-          toast.error('Error consultando los usuarios');
+       console.log("esto devuelve ",data)
+        }, [data]); 
+
+    useEffect(()=>{
+        if(error){
+            toast.error("Error Consultando tus proyectos")
         }
-        }, [error]); 
+    })
     
     if (loading) return <div>Cargando....</div>;
-    return (
+    return(<div>Todos los proyectos</div>)
+    
+    /* (
         <div className='proyectoEst'>
         {data && data.inscripcionEstudiante ?(
             <>
@@ -37,7 +43,7 @@ const ProyectosInscrit = () => {
         )}
                         
         </div>
-    )
+    ) */
 }
 
 export {ProyectosInscrit};

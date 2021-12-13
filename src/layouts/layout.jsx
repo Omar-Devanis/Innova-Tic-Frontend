@@ -6,6 +6,9 @@ import { VALIDATE_TOKEN } from '../graphql/auth/mutations.js';
 import { useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../components/navbar.jsx";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Layout = () => {
     const navigate = useNavigate();
@@ -52,7 +55,8 @@ const Layout = () => {
                 <div className='main'>
                 <Outlet />
                 </div>
-            </main>     
+            </main>
+            <ToastContainer />    
         </div>
     )
 }

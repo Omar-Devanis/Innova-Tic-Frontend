@@ -27,10 +27,10 @@
 }
 
 .boton{
+    padding:0px;
     border: none;
     border-radius: 4px;
-    height: 35px;
-    background-color: rgb(250, 32, 32);
+    background-color: rgba(255, 255, 255,0.25);
     color: white;
     font-weight: 950;
 }
@@ -87,9 +87,12 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(250, 32, 32);
+    /* background-color: #091353; */
     height: 3rem;
     padding: 0.5rem;
+    background: #2a0845; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6441A5, #2a0845);
 }
 .inputnav{
     padding-left: 8px;
@@ -103,13 +106,16 @@
     display: flex;
     flex-direction: column;
     width: 15rem;
-    background-color: rgb(126, 3, 3);
     gap: 10px;
     padding: 1rem;
+    background: #6441A5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .botonRuta{
     border: none;
-    background-color: rgb(252, 53, 53);
+    background-color: rgba(255, 255, 255,0.25);
     color: white;
     font-weight: 800;
     border-radius: 3px;

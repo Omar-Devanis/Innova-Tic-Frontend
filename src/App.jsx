@@ -21,7 +21,6 @@ import { UsuariosEst } from "./pages/usuarios/lider/usuariosEst.jsx"
 import { ProyectosUser } from "./pages/proyectos/estudiante/proyectosUser.jsx"
 import { ProyectosInscrit } from "./pages/proyectos/estudiante/proyectosInscrit.jsx"
 
-
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
@@ -49,6 +48,7 @@ function App() {
   const [userData, setUserData] = useState({});
   const [authToken, setAuthToken] = useState('');
   const [loadingAuth, setLoadingAuth] = useState(true);
+
 
   const setToken = (token) => {
     setAuthToken(token);
