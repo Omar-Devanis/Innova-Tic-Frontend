@@ -25,11 +25,17 @@ const ProyectosInscrit = () => {
                         console.log('data servidor',data)
                         return(
                             <div className="tarjeta" key={e.proyecto._id}>
-                                <h3>{e.proyecto.nombre}</h3>
-                                <p>Lider: {e.proyecto.lider.nombre} {e.proyecto.lider.apellido}</p>
-                                <p>{e.proyecto.fechaInicio}</p>
-                                <p>{e.proyecto.estado}</p>
-                                <p>{e.proyecto.fase}</p>
+                                <div className='Info'>
+                                    <h3>{e.proyecto.nombre}</h3>
+                                    <p>Lider: {e.proyecto.lider.nombre} {e.proyecto.lider.apellido}</p>
+                                    <p>{e.proyecto.fechaInicio}</p>
+                                    <p>{e.proyecto.estado}</p>
+                                    <p>{e.proyecto.fase}</p>
+                                </div>
+                                <div className='btns only'>
+                                    <button className='btn-vermas '>Mas informacion.</button>
+                                </div>
+                                
                             </div>)
                     }
                 )}
