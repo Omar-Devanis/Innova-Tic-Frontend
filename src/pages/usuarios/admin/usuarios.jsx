@@ -9,6 +9,10 @@ import { PrivateRoute } from '../../../components/PrivateRoute.jsx';
 
 const IndexUsuarios = () => {
     const {data, error, loading} = useQuery(GET_USUARIOS);
+    
+    useEffect(() => {
+      console.log('data servidor', data)
+    }, [data])
 
     useEffect(() => {
         if (error) {
@@ -38,7 +42,6 @@ const IndexUsuarios = () => {
               {data && data.Usuarios ? (
                 <>
                   {data.Usuarios.map((u) => {
-                    console.log('data servidor', data)
                     return (
                       <tr key={u._id}>
                         <td>{u.nombre}</td>
