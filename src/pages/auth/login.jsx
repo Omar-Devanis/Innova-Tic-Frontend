@@ -45,10 +45,15 @@ const Login = () => {
                     />
                 </div>
                 <div className="enlace">
-                    <span className='p' >No tienes cuenta?</span>
-                    <Link to='/auth/register'>
-                        <span className='p' >registrate</span>
-                    </Link>
+                    <div className='t'>
+                        <span className='p' >No tienes cuenta?</span>
+                    </div>
+                    <div>
+                        <Link to='/auth/register'>
+                            <span className='p subrayado' >registrate</span>
+                        </Link>
+                    </div>
+                    
                 </div>       
             </form>
         </div>

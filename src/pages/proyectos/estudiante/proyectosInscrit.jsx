@@ -18,23 +18,19 @@ const ProyectosInscrit = () => {
     })
     
     if (loading) return <div>Cargando....</div>;
-    return(<div>Todos los proyectos</div>)
-    
-    /* (
-        <div className='proyectoEst'>
+    return(<div className='proyectoEst'>
         {data && data.inscripcionEstudiante ?(
             <>
-                {data.inscripcionEstudiante.map(
-                    (e) =>{
+                {data.inscripcionEstudiante.map((e) =>{
                         console.log('data servidor',data)
                         return(
-                            <div className="tarjeta" key={e._id}>
-                <h3>{e.nombre}</h3>
-                <p>Lider: {e.lider.nombre} {e.lider.apellido}</p>
-                <p>{e.fechaInicio}</p>
-                <p>{e.estado}</p>
-                <p>{e.fase}</p>
-            </div>)
+                            <div className="tarjeta" key={e.proyecto._id}>
+                                <h3>{e.proyecto.nombre}</h3>
+                                <p>Lider: {e.proyecto.lider.nombre} {e.proyecto.lider.apellido}</p>
+                                <p>{e.proyecto.fechaInicio}</p>
+                                <p>{e.proyecto.estado}</p>
+                                <p>{e.proyecto.fase}</p>
+                            </div>)
                     }
                 )}
             </>
@@ -43,7 +39,7 @@ const ProyectosInscrit = () => {
         )}
                         
         </div>
-    ) */
+    )
 }
 
 export {ProyectosInscrit};

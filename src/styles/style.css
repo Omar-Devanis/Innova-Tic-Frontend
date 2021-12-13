@@ -30,9 +30,11 @@
     padding:0px;
     border: none;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255,0.25);
     color: white;
     font-weight: 950;
+    background: #2a0845; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,  #6441A5, #2a0845);
 }
 .boton:hover{
     cursor: pointer;
@@ -50,10 +52,12 @@
 
 
 .enlace {
+    width:100%;
     display: flex;
-    justify-content: space-between;
-    width: 30%;
+    flex-direction: row;
+    justify-content:space-around;
     font-size: 18px;
+    margin:10px 0 0 0;
 }
 
 .h1{
@@ -62,11 +66,16 @@
     color: rgb(68, 67, 67);
 }
 
-.p{
+
+.p{ 
+    display: inline-block;
     font-weight: 900;
     color: rgb(68, 67, 67);
 }
 
+.subrayado:hover{
+    color:brown;
+}
 
 .label{
     display: flex;
@@ -92,7 +101,7 @@
     padding: 0.5rem;
     background: #2a0845; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #6441A5, #2a0845);
+    background: linear-gradient(to right,  #6441A5, #2a0845);
 }
 .inputnav{
     padding-left: 8px;
