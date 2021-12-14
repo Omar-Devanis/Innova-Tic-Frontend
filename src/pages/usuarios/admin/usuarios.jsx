@@ -51,9 +51,12 @@ const IndexUsuarios = () => {
                         <td>{Enum_Rol[u.rol]}</td>
                         <td>{Enum_EstadoUsuario[u.estado]}</td>
                         <td>
-                          <Link to={`/usuarios/editar/${u._id}`}>
-                            <i className='fas fa-pen ' />
-                          </Link>
+                          <div>
+                            <Link to={`editar/${u._id}`}>
+                              <i className="fas fa-user-edit"/>
+                            </Link>
+                            <i class="fas fa-trash-alt"/>
+                          </div>    
                         </td>
                       </tr>
                     );

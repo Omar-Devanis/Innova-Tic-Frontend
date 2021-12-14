@@ -4,7 +4,10 @@ import { GET_PROYECTOS_EST } from '../../../graphql/inscripciones/queries';
 import { toast } from 'react-toastify';
 
 const ProyectosInscrit = () => {
-    const {data, error, loading} = useQuery(GET_PROYECTOS_EST);
+
+    const {data, error, loading} = useQuery(GET_PROYECTOS_EST,{
+        variables:"61a6eab8979aa2d96ce65aa4"
+    });
 
 
     useEffect(() => {

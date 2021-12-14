@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client"; 
 
 const GET_PROYECTOS_EST = gql`
-query ExampleQuery{
-    inscripcionEstudiante(estudiante: "61aacef4b4110de8ef10260c") {
+query ExampleQuery($estudiante: String!){
+    inscripcionEstudiante(estudiante: $estudiante) {
       proyecto {
         _id
         nombre

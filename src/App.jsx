@@ -8,6 +8,7 @@ import { IndexPrinciPal } from "./pages/index.jsx";
 import { Layout } from "./layouts/layout.jsx";
 import { AuthLayout } from "./layouts/authLayout.jsx";
 import { IndexUsuarios } from "./pages/usuarios/admin/usuarios.jsx";
+import {EditarUsuario} from "./pages/usuarios/admin/editarUsuario"
 import { AdminProyectos } from "./pages/proyectos/admin/proyectos.jsx"
 import { setContext } from '@apollo/client/link/context';
 import { AuthContext } from './context/authContext.js'
@@ -89,6 +90,7 @@ function App() {
               <Route path='' element={<Layout />} >
                 <Route path='perfil' element={<IndexPerfil />} />
                 <Route path='admin/usuarios' element={<IndexUsuarios />} />
+                <Route path='admin/usuarios/editar/:_id' element={<EditarUsuario />} />
                 <Route path='admin/proyectos' element={<AdminProyectos />} />
                 <Route path='lider/misProyectos' element={<MisProyectos />} />
                 <Route path='lider/crearProyecto' element={<CrearProyecto />} />
