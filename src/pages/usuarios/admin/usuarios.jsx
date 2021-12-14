@@ -1,15 +1,19 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_USUARIOS } from "../../../graphql/usuarios/queries.jsx";
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { Enum_Rol, Enum_EstadoUsuario } from '../../../utils/enums.js';
 import { PrivateRoute } from '../../../components/PrivateRoute.jsx';
+import Modal from "../../../components/Modal";
+import {EditarUsuario} from './editarUsuario.jsx';
 
 
 const IndexUsuarios = () => {
     const {data, error, loading} = useQuery(GET_USUARIOS);
     
+    const[estadoModal,setModal] = useState(false)
+
     useEffect(() => {
       console.log('data servidor', data)
     }, [data])
@@ -52,13 +56,18 @@ const IndexUsuarios = () => {
                         <td>{Enum_EstadoUsuario[u.estado]}</td>
                         <td>
                           <div>
-                            <Link to={`editar/${u._id}`}>
+                            {/* <Link to={`editar/${u._id}`}>
                               <i className="fas fa-user-edit"/>
-                            </Link>
+                            </Link> */}
+                            <i className="fas fa-user-edit"/>
                             <i class="fas fa-trash-alt"/>
                           </div>    
                         </td>
+                        <Modal>
+                          <EditarUsuario _id={u._id}/>
+                        </Modal>
                       </tr>
+                      
                     );
                   })}
                 </>
@@ -67,6 +76,7 @@ const IndexUsuarios = () => {
               )}
             </tbody>
           </table>
+          
         </div>
         </PrivateRoute>
     );

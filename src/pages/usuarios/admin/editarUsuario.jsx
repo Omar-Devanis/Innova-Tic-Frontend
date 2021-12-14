@@ -6,9 +6,10 @@ import { toast } from 'react-toastify';
 import { GET_USUARIO } from "../../../graphql/usuarios/queries";
 import EDITAR_ESTADO_U from "../../../graphql/usuarios/mutations"
 import { useFormData } from "../../../hooks/useFormData";
+import Modal from "../../../components/Modal";
 
-const EditarUsuario = ( )=>{
-    const {_id} = useParams()
+const EditarUsuario = ({_id})=>{
+    /* const {_id} = useParams() */
     const { form, formData, updateFormData } = useFormData(null)
     const {data:queryData,
         error:queryError,
@@ -44,6 +45,7 @@ const EditarUsuario = ( )=>{
 
     return(
         <div>
+        <Modal>
             <h4>Editar Usuario </h4>
             <h6>Nombre Usuario</h6>
             <p>{queryData.Usuario.nombre} {queryData.Usuario.apellido}</p>
@@ -65,6 +67,7 @@ const EditarUsuario = ( )=>{
                 </select>
                 <input type='submit'/>
             </form>
+            </Modal>
         </div>
     )
 }
