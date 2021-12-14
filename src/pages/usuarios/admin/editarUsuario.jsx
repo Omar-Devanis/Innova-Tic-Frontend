@@ -8,8 +8,8 @@ import EDITAR_ESTADO_U from "../../../graphql/usuarios/mutations"
 import { useFormData } from "../../../hooks/useFormData";
 import Modal from "../../../components/Modal";
 
-const EditarUsuario = ({_id})=>{
-    /* const {_id} = useParams() */
+const EditarUsuario = ( )=>{
+    const {_id} = useParams()
     const { form, formData, updateFormData } = useFormData(null)
     const {data:queryData,
         error:queryError,
@@ -44,19 +44,24 @@ const EditarUsuario = ({_id})=>{
     }
 
     return(
-        <div>
-        <Modal>
-            <h4>Editar Usuario </h4>
-            <h6>Nombre Usuario</h6>
-            <p>{queryData.Usuario.nombre} {queryData.Usuario.apellido}</p>
-            <h6>Estado Actual</h6>
-            <p>{queryData.Usuario.estado}</p>
+        <div className="contenedorAU">
+            <div className="actualizacionUA">
+                <div className='headerUA'>
+                        <h3>Actulizar Estado Usuario</h3>
+                </div>
+                <div className="bodyUA">
+                <h3>Nombre Usuario: </h3>
+                <p>{queryData.Usuario.nombre} {queryData.Usuario.apellido}</p>
+                <h3>Estado Actual: </h3>
+                <p>{queryData.Usuario.estado}</p>
             <form 
                 onSubmit={submitForm}
                 onChange={updateFormData}
                 ref={form}
                 id='formulario'
+                className="formularioAU"
                 >
+                <label>Desea Cambiar el estado del Usuario?</label>
                 <select name='estado' form='formulario'>
                     <option value='AUTORIZADO'>
                         Autorizado
@@ -67,7 +72,9 @@ const EditarUsuario = ({_id})=>{
                 </select>
                 <input type='submit'/>
             </form>
-            </Modal>
+                </div>
+            
+            </div>
         </div>
     )
 }

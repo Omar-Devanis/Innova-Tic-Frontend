@@ -322,3 +322,73 @@
 .botonCerrarM:hover{
     background-color: #f2f2f2;
 }
+
+.contenedorAU{
+    width:100%;
+    height:100%;
+    background-color:#222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actualizacionUA{
+    width:500px;
+    min-height:100px;
+    background:#fff;
+    position:relative;
+    border-radius:5px;
+    box-shadow:rgba(100, 100, 111, .5) 8px 7px 29px 0px;
+    padding:20px
+}
+
+.headerUA{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #E8E8E8;
+}
+
+.headerUA h3{
+    font-weight:500;
+    font-size: 16px;
+    color:#1766DC
+}
+
+.formularioAU{
+    margin-top:10px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.formularioAU label{
+    font-weight:500;
+    font-size: 16px;
+    margin-bottom:10px;
+}
+
+.formularioAU select{
+    width:110px;
+    padding:10px;
+    border-radius:5px;
+    margin-bottom:10px;
+}
+
+.formularioAU input{
+    align-self: center;
+    width:100px;
+    font-size:20px;
+    background: none;
+    border-radius:5px;
+    margin:20px;
+    border:2px solid #6441A5;
+}
+
+.formularioAU input:hover{
+    background-color: #6441A5;
+    color:#f2f2f2
+}
