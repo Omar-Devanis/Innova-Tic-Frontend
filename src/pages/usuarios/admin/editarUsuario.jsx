@@ -60,8 +60,13 @@ const EditarUsuario = ( )=>{
                 <div className="bodyUA">
                 <h3>Nombre Usuario: </h3>
                 <p>{queryData.Usuario.nombre} {queryData.Usuario.apellido}</p>
-                <h3>Estado Actual: </h3>
-                <p>{queryData.Usuario.estado}</p>
+                <h3>Identificacion Usuario: </h3>
+                <p>{queryData.Usuario.identificacion}</p>
+                <h3>Correo Usuario: </h3>
+                <p>{queryData.Usuario.correo}</p>
+                <h3>Rol Usuario: </h3>
+                <p>{queryData.Usuario.rol}</p>
+
             <form 
                 onSubmit={submitForm}
                 onChange={updateFormData}

@@ -19,21 +19,22 @@ query proyectos {
 `;
 
 const GET_PROYECTO = gql`
-query($_id: String!){
-  proyectoEspecifico(_id: $_id) {
+query ExampleQuery($_id: String!) {
+  proyectoEspecifico(_id:$_id) {
     nombre
-    presupuesto
-    fechaInicio
-    fase
-    estado
     lider {
       nombre
       apellido
       correo
     }
-    
+    fechaInicio
+    presupuesto
+    fase
+    estado
+
   }
 }
+
 `;
 
 const GET_MIS_PROYECT = gql`
