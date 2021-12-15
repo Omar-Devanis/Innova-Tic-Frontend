@@ -4,6 +4,7 @@ import {useUser} from '../../context/userContext';
 import { GET_USUARIO } from "../../graphql/usuarios/queries";
 import avatarU from "../../assets/img/avatarU.png"
 import Modal from '../../components/Modal'
+import EditarPerfil from './editarPerfil'
 
 
 const IndexPerfil = () => {
@@ -24,7 +25,9 @@ const IndexPerfil = () => {
     if (queryLoading) return <div>Cargando....</div>;
     return (
         <>
-        <Modal estado={estado} setEstado={setEstado} title={"Actualizar Perfil"}></Modal>
+        <Modal estado={estado} setEstado={setEstado} title={"Actualizar Perfil"}>
+            <EditarPerfil/>
+        </Modal>
         <div className='perfil'>
         
             <div className='contenedorPerfil'>

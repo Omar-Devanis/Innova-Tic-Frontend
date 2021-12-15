@@ -20,6 +20,7 @@ const GET_USUARIO = gql`
       nombre
       apellido
       correo
+      identificacion
       rol
       estado
     }
