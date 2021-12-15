@@ -8,8 +8,8 @@ const DropDown = ({ label, name, defaultValue = '', required, options }) => {
     setSelectedValue(defaultValue);
   }, [defaultValue]);
   return (
-    <label htmlFor={name} className="label">
-      <span>{label}</span>
+    <label htmlFor={name} className="label ">
+      <h3 >{label}</h3>
       <select
         required={required}
         name={name}

@@ -6,6 +6,8 @@ import { toast } from 'react-toastify';
 import { GET_USUARIO } from "../../../graphql/usuarios/queries";
 import {EDITAR_ESTADO_U} from "../../../graphql/usuarios/mutations"
 import { useFormData } from "../../../hooks/useFormData";
+import { DropDown } from "../../../components/dropDown";
+import {Enum_EstadoUsuario} from "../../../utils/enums.js"
 
 const EditarUsuario = ( )=>{
     const {_id} = useParams()
@@ -32,7 +34,7 @@ const EditarUsuario = ( )=>{
           }
           }, [queryError]);
 
-    if (queryLoading) return <div>Cargando....</div>;
+   
     
     const submitForm = (e)=>{
         e.preventDefault();
@@ -42,29 +44,43 @@ const EditarUsuario = ( )=>{
         })
     }
 
+    useEffect(()=>{
+        if(mutationData){
+            toast.success("Usuario Modificado")
+        }
+    },[mutationData])
+
+    if (queryLoading) return <div>Cargando....</div>;
     return(
-        <div>
-            <h4>Editar Usuario </h4>
-            <h6>Nombre Usuario</h6>
-            <p>{queryData.Usuario.nombre} {queryData.Usuario.apellido}</p>
-            <h6>Estado Actual</h6>
-            <p>{queryData.Usuario.estado}</p>
+        <div className="contenedorAU">
+            <div className="actualizacionUA">
+                <div className='headerUA'>
+                        <h3>Actulizar Estado Usuario</h3>
+                </div>
+                <div className="bodyUA">
+                <h3>Nombre Usuario: </h3>
+                <p>{queryData.Usuario.nombre} {queryData.Usuario.apellido}</p>
+                <h3>Estado Actual: </h3>
+                <p>{queryData.Usuario.estado}</p>
             <form 
                 onSubmit={submitForm}
                 onChange={updateFormData}
                 ref={form}
                 id='formulario'
+                className="formularioAU"
                 >
-                <select name='estado' form='formulario'>
-                    <option value='AUTORIZADO'>
-                        Autorizado
-                    </option>
-                    <option value='PENDIENTE'>
-                        Pendiente
-                    </option>
-                </select>
+                <DropDown
+                    label={"Estado de la persona"}
+                    name={"estado"}
+                    defaultValue={queryData.Usuario.estado}
+                    required={true}
+                    options={Enum_EstadoUsuario}
+                />
                 <input type='submit'/>
             </form>
+                </div>
+            
+            </div>
         </div>
     )
 }

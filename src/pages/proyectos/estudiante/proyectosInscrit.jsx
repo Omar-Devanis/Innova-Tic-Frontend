@@ -2,11 +2,17 @@ import React, {useEffect} from 'react'
 import { useQuery } from '@apollo/client';
 import { GET_PROYECTOS_EST } from '../../../graphql/inscripciones/queries';
 import { toast } from 'react-toastify';
+import {useUser} from '../../../context/userContext' 
 
 const ProyectosInscrit = () => {
 
+    const id = useUser()
+
+    const id_user= id.userData._id
+    console.log(id_user)
+
     const {data, error, loading} = useQuery(GET_PROYECTOS_EST,{
-        variables:"61a6eab8979aa2d96ce65aa4"
+        variables:{id_user}
     });
 
 

@@ -83,8 +83,8 @@
     padding-left: 0px;
 }
 .label>span{
-    font-weight: 1000;
-    color: rgb(68, 67, 67);
+    font-weight:500;
+    font-size: 16px;
 }
 
 .main{
@@ -206,6 +206,20 @@
     color: rgb(85, 85, 252);
 }
 
+.iconEdit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.iconEdit svg{
+    color: rgb(68, 67, 67);
+}
+
+.iconEdit svg:hover{
+    color: rgb(85, 85, 252);
+}
+
 .proyectoEst{
     display: flex;
     flex-wrap: wrap;
@@ -255,14 +269,18 @@
     justify-content: flex-end ;
 }
 
+
+
 .fas{
     margin-left:10px ;
+    width:10px;
 }
 
 .fa-user-edit{
     color:rgba(105, 47, 183,0.75);
 }
 
+<<<<<<< HEAD
 .fa-trash-alt:hover{
     color:#CD1818;
 }
@@ -280,3 +298,133 @@
     background-color: green;
     color: black;
 }
+=======
+
+
+.overlay{
+    width:100vw;
+    height:100vh;
+    background-color:rgba(0, 0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorModal{
+    width:500px;
+    min-height:100px;
+    background:#fff;
+    position:relative;
+    border-radius:5px;
+    box-shadow:rgba(100, 100, 111, .5) 8px 7px 29px 0px;
+    padding:20px
+}
+
+.headerModal{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #E8E8E8;
+}
+
+.headerModal h3{
+    font-weight:500;
+    font-size: 16px;
+    color:#1766DC
+}
+
+.botonCerrarM{
+    position: absolute;
+    right:20px;
+    top:15px;
+    width:25px;
+    height:25px;
+    border:none;
+    border-radius:5px;
+    background:none;
+    cursor:pointer;
+    color:#1766DC;
+}
+
+.botonCerrarM svg{
+    width:100%;
+    height: 100%;
+}
+
+.botonCerrarM:hover{
+    background-color: #f2f2f2;
+}
+
+.contenedorAU{
+    width:100%;
+    height:100%;
+    background-color:#222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actualizacionUA{
+    width:500px;
+    min-height:100px;
+    background:#fff;
+    position:relative;
+    border-radius:5px;
+    box-shadow:rgba(100, 100, 111, .5) 8px 7px 29px 0px;
+    padding:20px
+}
+
+.headerUA{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #E8E8E8;
+}
+
+.headerUA h3{
+    font-weight:500;
+    font-size: 16px;
+    color:#1766DC
+}
+
+.formularioAU{
+    margin-top:10px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.formularioAU label{
+    font-weight:500;
+    font-size: 16px;
+    margin-bottom:10px;
+}
+
+.formularioAU select{
+    width:110px;
+    padding:10px;
+    border-radius:5px;
+    margin-bottom:10px;
+}
+
+.formularioAU input{
+    align-self: center;
+    width:100px;
+    font-size:20px;
+    background: none;
+    border-radius:5px;
+    margin:20px;
+    border:2px solid #6441A5;
+}
+
+.formularioAU input:hover{
+    background-color: #6441A5;
+    color:#f2f2f2
+}
+
+>>>>>>> c8c57fe922cd4da870ebe8fcd562de45883e9b1b
