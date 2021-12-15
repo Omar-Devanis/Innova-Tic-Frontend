@@ -283,8 +283,8 @@
 
 
 .overlay{
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
     background-color:rgba(0, 0,0,.5);
     display: flex;
     justify-content: center;
@@ -347,9 +347,11 @@
     align-items: center;
 }
 
-.actualizacionUA{
+.actualizacionUA,
+.contenedorPerfil{
     width:500px;
     min-height:100px;
+    flex-wrap: wrap;
     background:#fff;
     position:relative;
     border-radius:5px;
@@ -406,5 +408,51 @@
 .formularioAU input:hover{
     background-color: #6441A5;
     color:#f2f2f2
+}
+
+.perfil{
+    width: 100%;
+    height:100%;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerPerfil{
+    display: flex;
+    flex-direction: column;
+    border-bottom:2px solid #E8E8E8;
+}
+.contenedorPerfil .picture{
+    width:100px;
+    height:100px;
+    margin-bottom:20px;
+}
+.contenedorPerfil .picture img{
+    width:100%;
+    height:100%;
+}
+
+.bodyPerfil{
+    display: flex;
+    flex-direction: column;
+}
+.bodyPerfil button{
+    width:100px;
+    align-self: flex-end;
+    background:none;
+    border-radius:5px;
+    padding:10px;
+    border:2px solid #6441A5;
+
+}
+
+.bodyPerfil button:hover{
+    background-color:#6441A5;
+    color:#f2f2f2;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform ease 2s ;
 }
 
