@@ -61,7 +61,7 @@ const EditarUsuario = ( )=>{
                 id='formulario'
                 className="formularioAU"
                 >
-                <label>Desea Cambiar el estado del Usuario?</label>
+                <label>Quieres cambiar el estado del usuario?</label>
                 <select name='estado' form='formulario'>
                     <option value='AUTORIZADO'>
                         Autorizado
