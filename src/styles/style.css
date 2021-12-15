@@ -280,6 +280,25 @@
     color:rgba(105, 47, 183,0.75);
 }
 
+<<<<<<< HEAD
+.fa-trash-alt:hover{
+    color:#CD1818;
+}
+
+.botAuth{
+    background-color: rgb(32, 248, 32);
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    font-weight: 700;
+    color: rgb(66, 65, 65);
+}
+.botAuth:hover{
+    cursor: pointer;
+    background-color: green;
+    color: black;
+}
+=======
 
 
 .overlay{
@@ -410,6 +429,7 @@
     color:#f2f2f2
 }
 
+<<<<<<< HEAD
 .perfil{
     width: 100%;
     height:100%;
@@ -456,3 +476,6 @@
     transition: transform ease 2s ;
 }
 
+=======
+>>>>>>> c8c57fe922cd4da870ebe8fcd562de45883e9b1b
+>>>>>>> 69bfa85f2f3700c95f8eea2a8ae5f9a34883a20c

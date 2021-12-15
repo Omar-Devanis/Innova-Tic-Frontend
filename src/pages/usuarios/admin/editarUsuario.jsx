@@ -4,7 +4,7 @@ import { useQuery} from '@apollo/client';
 import { useMutation } from "@apollo/client";
 import { toast } from 'react-toastify';
 import { GET_USUARIO } from "../../../graphql/usuarios/queries";
-import EDITAR_ESTADO_U from "../../../graphql/usuarios/mutations"
+import {EDITAR_ESTADO_U} from "../../../graphql/usuarios/mutations"
 import { useFormData } from "../../../hooks/useFormData";
 import { DropDown } from "../../../components/dropDown";
 import {Enum_EstadoUsuario} from "../../../utils/enums.js"
