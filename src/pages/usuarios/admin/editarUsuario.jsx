@@ -6,7 +6,8 @@ import { toast } from 'react-toastify';
 import { GET_USUARIO } from "../../../graphql/usuarios/queries";
 import EDITAR_ESTADO_U from "../../../graphql/usuarios/mutations"
 import { useFormData } from "../../../hooks/useFormData";
-import Modal from "../../../components/Modal";
+import { DropDown } from "../../../components/dropDown";
+import {Enum_EstadoUsuario} from "../../../utils/enums.js"
 
 const EditarUsuario = ( )=>{
     const {_id} = useParams()
@@ -33,7 +34,7 @@ const EditarUsuario = ( )=>{
           }
           }, [queryError]);
 
-    if (queryLoading) return <div>Cargando....</div>;
+   
     
     const submitForm = (e)=>{
         e.preventDefault();
@@ -43,6 +44,13 @@ const EditarUsuario = ( )=>{
         })
     }
 
+    useEffect(()=>{
+        if(mutationData){
+            toast.success("Usuario Modificado")
+        }
+    },[mutationData])
+
+    if (queryLoading) return <div>Cargando....</div>;
     return(
         <div className="contenedorAU">
             <div className="actualizacionUA">
@@ -61,15 +69,13 @@ const EditarUsuario = ( )=>{
                 id='formulario'
                 className="formularioAU"
                 >
-                <label>Quieres cambiar el estado del usuario?</label>
-                <select name='estado' form='formulario'>
-                    <option value='AUTORIZADO'>
-                        Autorizado
-                    </option>
-                    <option value='PENDIENTE'>
-                        Pendiente
-                    </option>
-                </select>
+                <DropDown
+                    label={"Estado de la persona"}
+                    name={"estado"}
+                    defaultValue={queryData.Usuario.estado}
+                    required={true}
+                    options={Enum_EstadoUsuario}
+                />
                 <input type='submit'/>
             </form>
                 </div>
