@@ -48,6 +48,7 @@ const Register = () => {
                     disabled={Object.keys(formData).length === 0}
                     loading={loadingMutation}
                     text='Registrar'
+                    clase='boton'
                     />
                 </div>    
             </form>

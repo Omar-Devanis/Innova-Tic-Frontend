@@ -266,3 +266,17 @@
 .fa-trash-alt:hover{
     color:#CD1818;
 }
+
+.botAuth{
+    background-color: rgb(32, 248, 32);
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    font-weight: 700;
+    color: rgb(66, 65, 65);
+}
+.botAuth:hover{
+    cursor: pointer;
+    background-color: green;
+    color: black;
+}

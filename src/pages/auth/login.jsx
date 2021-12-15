@@ -42,6 +42,7 @@ const Login = () => {
                     disabled={Object.keys(formData).length === 0}
                     loading={loadingMutation}
                     text='Iniciar sesión'
+                    clase='boton'
                     />
                 </div>
                 <div className="enlace">
