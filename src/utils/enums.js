@@ -5,19 +5,26 @@ const Enum_Rol = {
   };
   
   const Enum_EstadoUsuario = {
-    PENDIENTE: 'Pendiente',
-    AUTORIZADO: 'Autorizado',
-    NO_AUTORIZADO: 'No autorizado',
+    PENDIENTE: 'PENDIENTE',
+    AUTORIZADO: 'AUTORIZADO',
+    NO_AUTORIZADO: 'NO_AUTORIZADO',
   };
   
   const Enum_EstadoProyecto = {
-    ACTIVO: 'Activo',
-    INACTIVO: 'Inactivo',
+    ACTIVO: 'ACTIVO',
+    INACTIVO: 'INACTIVO',
   };
+
+  const Enum_FaseProyecto ={
+    INICIADO : "INICIADO",
+    EN_DESARROLLO : "EN_DESARROLLO",
+    TERMINADO : "TERMINADO",
+    NULA : "NULA"
+  }
   
   const Enum_TipoObjetivo = {
-    GENERAL: 'General',
-    ESPECIFICO: 'Específico',
+    GENERAL: 'GENERAL',
+    ESPECIFICO: 'ESPECIFICO',
   };
   
-  export { Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto, Enum_TipoObjetivo };
+  export { Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto,Enum_FaseProyecto, Enum_TipoObjetivo };

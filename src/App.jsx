@@ -21,6 +21,7 @@ import { CrearProyecto } from "./pages/proyectos/lider/crearProyecto.jsx"
 import { UsuariosEst } from "./pages/usuarios/lider/usuariosEst.jsx"
 import { ProyectosUser } from "./pages/proyectos/estudiante/proyectosUser.jsx"
 import { ProyectosInscrit } from "./pages/proyectos/estudiante/proyectosInscrit.jsx"
+import EditarProyecto from './pages/proyectos/admin/editarProyecto';
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -92,6 +93,7 @@ function App() {
                 <Route path='admin/usuarios' element={<IndexUsuarios />} />
                 <Route path='admin/usuarios/editar/:_id' element={<EditarUsuario />} />
                 <Route path='admin/proyectos' element={<AdminProyectos />} />
+                <Route path='admin/proyectos/editar/:_id' element={<EditarProyecto />} />
                 <Route path='lider/misProyectos' element={<MisProyectos />} />
                 <Route path='lider/crearProyecto' element={<CrearProyecto />} />
                 <Route path='lider/estudiantes' element={<UsuariosEst />} />

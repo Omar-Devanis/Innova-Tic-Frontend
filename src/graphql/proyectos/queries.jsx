@@ -18,6 +18,24 @@ query proyectos {
 
 `;
 
+const GET_PROYECTO = gql`
+query($_id: String!){
+  proyectoEspecifico(_id: $_id) {
+    nombre
+    presupuesto
+    fechaInicio
+    fase
+    estado
+    lider {
+      nombre
+      apellido
+      correo
+    }
+    
+  }
+}
+`;
+
 const GET_MIS_PROYECT = gql`
   query ProyectosLiderados($lider: String!) {
     proyectosLiderados(lider: $lider) {
@@ -34,4 +52,4 @@ const GET_MIS_PROYECT = gql`
   }
 `;
 
-export {GET_PROYECTOS, GET_MIS_PROYECT}
+export {GET_PROYECTOS, GET_PROYECTO, GET_MIS_PROYECT}
