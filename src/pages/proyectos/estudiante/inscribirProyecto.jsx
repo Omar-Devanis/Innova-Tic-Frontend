@@ -8,7 +8,7 @@ import { useQuery } from '@apollo/client';
 import { useMutation } from "@apollo/client";
 import {useUser} from '../../../context/userContext';
 import { toast } from 'react-toastify';
-
+import {ButtonLoading} from '../../../components/botonRe'
 
 const SolicitudInscripcionProyecto = () =>{
 
@@ -40,7 +40,7 @@ const SolicitudInscripcionProyecto = () =>{
                         <h4>Fase: {data.proyectoEspecifico.fase}</h4>
                         <h4>Estado: {data.proyectoEspecifico.estado}</h4>
                         <div className='contenedorBtn'>
-                            <InscripcionProyecto idProyecto={_id}/>
+                            <InscripcionProyecto idProyecto={_id} estado={data.proyectoEspecifico.estado}/>
                         </div>
                             
                     </div>
@@ -60,12 +60,12 @@ const SolicitudInscripcionProyecto = () =>{
     )
 }
 
-const InscripcionProyecto = ({idProyecto}) =>{
+const InscripcionProyecto = ({idProyecto,estado}) =>{
 
     const{userData} = useUser()
 
     const [crearInscripcion,{data,error,loading}] = useMutation(CREAR_INSCRIPCION);
-
+    
     useEffect(()=>{
         if(data){
             console.log(data)
@@ -74,12 +74,17 @@ const InscripcionProyecto = ({idProyecto}) =>{
 
     const confirmarInscripcion = () =>{
         crearInscripcion({variables:{proyecto:idProyecto,estudiante:userData._id}})
+        toast.success("Solicitud enviada")
     }
 
     return(
-        <button onClick={()=>{confirmarInscripcion()}}>
-            Aplicar
-        </button>
+        <ButtonLoading
+            loading={loading}
+            text={'Aplicar'}
+            disabled={estado === 'INACTIVO'}
+            onClick={()=>{confirmarInscripcion()}}
+        />
+          
     );
 };
 

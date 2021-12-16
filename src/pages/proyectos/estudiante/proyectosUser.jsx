@@ -21,6 +21,7 @@ const ProyectosUser = () => {
     
     if (loanding) return <div>Cargando...</div>
     return (<div className='proyectoEst'>
+                <div className="title">Proyectos</div>
     {data && data.Proyectos ?(
         <>
             {data.Proyectos.map((p) =>{
@@ -29,11 +30,7 @@ const ProyectosUser = () => {
                         <div className="tarjeta" key={p._id}>
                         <Link to={`solicitudP/${p._id}`} >                            
                             <div className='Info'>
-                                <h3>{p.nombre}</h3>
-                                <p><span>Lider: </span>{p.lider.nombre} {p.lider.apellido}</p>
-                                <p><span>Contacto: </span>{p.lider.correo}</p>
-                                <p>{p.estado}</p>
-                                <p>{p.fase}</p>
+                                <h3>{p.nombre} - {p.estado}</h3>
                             </div>
                         </Link>
 

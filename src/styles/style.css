@@ -222,8 +222,15 @@
 
 .proyectoEst{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     padding:20px;
+}
+
+.title{
+    padding:20px;
+    font-weight:700;
+    font-size:30px;
 }
 
 .btn{
