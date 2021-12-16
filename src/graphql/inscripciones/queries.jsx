@@ -20,4 +20,15 @@ query ExampleQuery($estudiante: String!){
 
 `
 
-export {GET_PROYECTOS_EST}
+const RESOLICITUD = gql`
+  query($proyecto: String!){
+    inscripcionProyecto(proyecto:$proyecto) {
+      estudiante {
+        _id
+      }
+    }}
+  
+
+`
+
+export {GET_PROYECTOS_EST,RESOLICITUD }

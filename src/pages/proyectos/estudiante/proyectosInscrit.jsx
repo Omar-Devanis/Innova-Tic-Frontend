@@ -6,13 +6,10 @@ import {useUser} from '../../../context/userContext'
 
 const ProyectosInscrit = () => {
 
-    const id = useUser()
-
-    const id_user= id.userData._id
-    console.log(id_user)
+    const{userData} = useUser()
 
     const {data, error, loading} = useQuery(GET_PROYECTOS_EST,{
-        variables:{id_user}
+        variables:{estudiante:userData._id}
     });
 
 

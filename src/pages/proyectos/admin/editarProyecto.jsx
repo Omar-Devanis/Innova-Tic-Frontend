@@ -60,6 +60,8 @@ const EditarProyecto=()=>{
         }
     },[mutationData])
 
+    
+
     if (queryLoading) return <div>Cargando....</div>;
 
     return(

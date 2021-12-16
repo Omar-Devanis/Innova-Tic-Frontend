@@ -22,6 +22,7 @@ import { UsuariosEst } from "./pages/usuarios/lider/usuariosEst.jsx"
 import { ProyectosUser } from "./pages/proyectos/estudiante/proyectosUser.jsx"
 import { ProyectosInscrit } from "./pages/proyectos/estudiante/proyectosInscrit.jsx"
 import EditarProyecto from './pages/proyectos/admin/editarProyecto';
+import SolicitudInscripcionProyecto from './pages/proyectos/estudiante/inscribirProyecto'
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -98,6 +99,7 @@ function App() {
                 <Route path='lider/crearProyecto' element={<CrearProyecto />} />
                 <Route path='lider/estudiantes' element={<UsuariosEst />} />
                 <Route path='user/todosLosProyectos' element={<ProyectosUser />} />
+                <Route path='user/todosLosProyectos/solicitudP/:_id' element={<SolicitudInscripcionProyecto />} />
                 <Route path='user/proyectosInscrit' element={<ProyectosInscrit />} />
               </Route>
             </Routes>

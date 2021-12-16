@@ -1,5 +1,4 @@
 import React, {useEffect}from "react";
-import { useParams } from "react-router";
 import { useQuery} from '@apollo/client';
 import { useMutation } from "@apollo/client";
 import { toast } from 'react-toastify';

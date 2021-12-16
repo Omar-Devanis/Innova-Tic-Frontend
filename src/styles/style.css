@@ -256,7 +256,7 @@
     width:30%;
     display: flex;
     align-self: flex-end;
-    justify-content: space-around;
+    justify-content: flex-end;
 }
 .btn-inscripcion,.btn-vermas{
     padding:5px 10px;
@@ -491,6 +491,30 @@
 }
 
 .inputEp:hover{
+    background-color:#6441A5;
+    color:#f2f2f2;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform ease 2s ;
+}
+
+.contenedorBtn{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+
+.contenedorBtn button{
+    width:100px;
+    font-size:20px;
+    background: none;
+    border-radius:5px;
+    margin:20px;
+    border:2px solid #6441A5;
+}
+
+.contenedorBtn button:hover{
     background-color:#6441A5;
     color:#f2f2f2;
     cursor: pointer;

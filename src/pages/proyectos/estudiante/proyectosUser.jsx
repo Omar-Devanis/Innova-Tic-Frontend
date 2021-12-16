@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client'
 import { useEffect } from 'react/cjs/react.development'
 import { GET_PROYECTOS } from '../../../graphql/proyectos/queries'
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const ProyectosUser = () => {
 
@@ -26,6 +27,7 @@ const ProyectosUser = () => {
                     console.log('data servidor',data)
                     return(
                         <div className="tarjeta" key={p._id}>
+                        <Link to={`solicitudP/${p._id}`} >                            
                             <div className='Info'>
                                 <h3>{p.nombre}</h3>
                                 <p><span>Lider: </span>{p.lider.nombre} {p.lider.apellido}</p>
@@ -33,11 +35,8 @@ const ProyectosUser = () => {
                                 <p>{p.estado}</p>
                                 <p>{p.fase}</p>
                             </div>
-                            
-                            <div className='btns'>
-                                <button className='btn-vermas'>Ver</button>
-                                <button className='btn-inscripcion'>Inscribirme</button>
-                            </div>
+                        </Link>
+
                         </div>)
                 }
             )}
