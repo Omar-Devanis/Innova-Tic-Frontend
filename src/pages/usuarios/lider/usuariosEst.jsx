@@ -51,7 +51,7 @@ const UsuariosEst = () => {
                         <td>{Enum_Rol[u.rol]}</td>
                         <td>{Enum_EstadoUsuario[u.estado]}</td>
                         <td>
-                          <AceptarEst idEst={u._id} est={u.estado}/>
+                          <AceptarEst idEst={u._id}/>
                         </td>
                       </tr>
                     );
@@ -70,25 +70,25 @@ const UsuariosEst = () => {
   export {UsuariosEst};
 
 
-const AceptarEst = (({ idEst, est }) =>{
+const AceptarEst = (({ idEst }) =>{
   console.log("estId", idEst)
   const [aceptarUser, {data: dataMutation, error: errorMutation, loading: loadingMutation}] = 
     useMutation(ACEPTAR_USUARIO);
 
   useEffect(() => {
     if (dataMutation) {
-      toast.success('Usuario creado');
+      toast.success('Usuario autorizado');
     }
   }, [dataMutation]);  
 
   useEffect(() => {
     if (errorMutation) {
-      toast.error('Error aceptando al estudiante');
+      toast.error('Error autorizando al estudiante');
     }
   }, [errorMutation]);
 
   const aceptar = () =>{
-    aceptarUser({variables: {_id: idEst, estado: est } });
+    aceptarUser({variables: {id: idEst} });
   }
 
   return (
@@ -96,7 +96,7 @@ const AceptarEst = (({ idEst, est }) =>{
     onClick={() => aceptar()}
     disabled={false}
     loading={loadingMutation}
-    text='Aceptar'
+    text='Autorizar'
     clase='botAuth'
 
     />

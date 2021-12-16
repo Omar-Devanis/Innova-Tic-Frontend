@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { useEffect } from 'react/cjs/react.development'
 import { GET_MIS_PROYECT } from '../../../graphql/proyectos/queries'
@@ -41,8 +42,10 @@ const MisProyectos = () => {
                             </div>
                             
                             <div className='btns'>
-                                <button className='btn-vermas'>Ver</button>
-                                <button className='btn-inscripcion'>Inscribirme</button>
+                                <Link to="/lider/editarProyecto">
+                                    <button className='btn-inscripcion'>Actualizar</button>
+                                </Link>
+                                <button className='btn-vermas'>inscripciones</button>
                             </div>
                         </div>)
                 }

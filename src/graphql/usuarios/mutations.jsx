@@ -16,10 +16,9 @@ const EDITAR_ESTADO_U = gql`
 `;
 
 const ACEPTAR_USUARIO = gql`
-mutation Mutation($id: String!, $estado: Enum_EstadoUsuario) {
-  aceptarEstudiantes(_id: $id, estado: $estado) {
+mutation Mutation($id: String!) {
+  aceptarEstudiantes(_id: $id) {
     _id
-   
   }
 }
 
