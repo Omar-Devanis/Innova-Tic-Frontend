@@ -18,6 +18,7 @@ import { useEffect } from 'react/cjs/react.development';
 import jwt_decode from "jwt-decode";
 import { MisProyectos } from "./pages/proyectos/lider/misProyectos.jsx"
 import { CrearProyecto } from "./pages/proyectos/lider/crearProyecto.jsx"
+import { EditProyectoLider } from "./pages/proyectos/lider/editProyecto.jsx"
 import { UsuariosEst } from "./pages/usuarios/lider/usuariosEst.jsx"
 import { ProyectosUser } from "./pages/proyectos/estudiante/proyectosUser.jsx"
 import { ProyectosInscrit } from "./pages/proyectos/estudiante/proyectosInscrit.jsx"
@@ -97,6 +98,7 @@ function App() {
                 <Route path='admin/proyectos/editar/:_id' element={<EditarProyecto />} />
                 <Route path='lider/misProyectos' element={<MisProyectos />} />
                 <Route path='lider/crearProyecto' element={<CrearProyecto />} />
+                <Route path='lider/editarProyecto' element={<EditProyectoLider />} />
                 <Route path='lider/estudiantes' element={<UsuariosEst />} />
                 <Route path='user/todosLosProyectos' element={<ProyectosUser />} />
                 <Route path='user/todosLosProyectos/solicitudP/:_id' element={<SolicitudInscripcionProyecto />} />
