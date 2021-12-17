@@ -14,8 +14,6 @@ const SolicitudInscripcionProyecto = () =>{
 
     const{_id}=useParams()
 
-    
-    
     const {data,
         error,
         loading} = useQuery(GET_PROYECTO,{variables:{_id}});
