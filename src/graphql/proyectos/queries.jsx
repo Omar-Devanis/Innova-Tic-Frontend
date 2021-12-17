@@ -13,6 +13,11 @@ query proyectos {
       }
       fase
       estado
+      inscripciones {
+        estudiante {
+          _id
+        }
+      }
     }
   }
 
@@ -31,7 +36,12 @@ query ExampleQuery($_id: String!) {
     presupuesto
     fase
     estado
-
+    inscripciones {
+      estado
+      estudiante {
+        _id
+      }
+    }
   }
 }
 
@@ -48,6 +58,12 @@ const GET_MIS_PROYECT = gql`
       lider {
         nombre
         correo
+      }
+      inscripciones {
+        estado
+        estudiante {
+          _id
+        }
       }
     }
   }

@@ -1,9 +1,9 @@
-import React, {useEffect}from 'react';
+import React, {useEffect, useState}from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 import { GET_PROYECTO } from "../../../graphql/proyectos/queries";
 import {CREAR_INSCRIPCION} from "../../../graphql/inscripciones/mutation"
-import { RESOLICITUD } from '../../../graphql/inscripciones/queries';
+import { GET_PROYECTOS } from "../../../graphql/proyectos/queries" 
 import { useQuery } from '@apollo/client';
 import { useMutation } from "@apollo/client";
 import {useUser} from '../../../context/userContext';
@@ -13,6 +13,8 @@ import {ButtonLoading} from '../../../components/botonRe'
 const SolicitudInscripcionProyecto = () =>{
 
     const{_id}=useParams()
+
+    
     
     const {data,
         error,
@@ -40,7 +42,7 @@ const SolicitudInscripcionProyecto = () =>{
                         <h4>Fase: {data.proyectoEspecifico.fase}</h4>
                         <h4>Estado: {data.proyectoEspecifico.estado}</h4>
                         <div className='contenedorBtn'>
-                            <InscripcionProyecto idProyecto={_id} estado={data.proyectoEspecifico.estado}/>
+                            <InscripcionProyecto idProyecto={_id} estado={data.proyectoEspecifico.estado} inscripciones={data.proyectoEspecifico.inscripciones}/>
                         </div>
                             
                     </div>
@@ -60,12 +62,29 @@ const SolicitudInscripcionProyecto = () =>{
     )
 }
 
-const InscripcionProyecto = ({idProyecto,estado}) =>{
+const InscripcionProyecto = ({idProyecto,estado,inscripciones}) =>{
+
+    const [estadoInscripcion, setEstadoInscripcion] = useState("")
+
+    console.log("esto",inscripciones)
 
     const{userData} = useUser()
 
     const [crearInscripcion,{data,error,loading}] = useMutation(CREAR_INSCRIPCION);
     
+    console.log(inscripciones)
+
+    useEffect(()=>{
+        if(userData&&inscripciones){
+            const ftl = inscripciones.filter((el)=> el.estudiante._id === userData._id)
+            if(ftl.length > 0){
+                setEstadoInscripcion(ftl[0].estado)
+            }
+            
+            console.log("filter",ftl)
+        }
+    },[userData,inscripciones])
+
     useEffect(()=>{
         if(data){
             console.log(data)
@@ -78,12 +97,17 @@ const InscripcionProyecto = ({idProyecto,estado}) =>{
     }
 
     return(
-        <ButtonLoading
+        <>
+            {estadoInscripcion !== "" ? (
+                <span>Tu solicitud ya fue enviada</span>
+            ):(<ButtonLoading
             loading={loading}
             text={'Aplicar'}
             disabled={estado === 'INACTIVO'}
-            onClick={()=>{confirmarInscripcion()}}
-        />
+            onClick={()=>{confirmarInscripcion()}}/>
+            )}
+        </>
+        
           
     );
 };

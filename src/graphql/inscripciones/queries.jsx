@@ -15,20 +15,22 @@ query ExampleQuery($estudiante: String!){
         estado
         fase 
       }
+      estado
     }
     }
 
 `
 
-const RESOLICITUD = gql`
-  query($proyecto: String!){
-    inscripcionProyecto(proyecto:$proyecto) {
-      estudiante {
-        _id
-      }
-    }}
-  
+const INSCRIPCIONES_PROYECTOS = gql`
+query($proyecto: String!){
+  inscripcionProyecto(proyecto: $proyecto) {
+    estudiante {
+      _id
+    }
+    estado
+  }
+}
 
 `
 
-export {GET_PROYECTOS_EST,RESOLICITUD }
+export {GET_PROYECTOS_EST,INSCRIPCIONES_PROYECTOS }
