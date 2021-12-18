@@ -25,6 +25,7 @@ import { ProyectosInscrit } from "./pages/proyectos/estudiante/proyectosInscrit.
 import EditarProyecto from './pages/proyectos/admin/editarProyecto';
 import SolicitudInscripcionProyecto from './pages/proyectos/estudiante/inscribirProyecto'
 import { MasInformacion} from './pages/proyectos/estudiante/avance';
+import { EditarAvance } from './pages/proyectos/estudiante/editarAvance';
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -105,6 +106,7 @@ function App() {
                 <Route path='user/todosLosProyectos/solicitudP/:_id' element={<SolicitudInscripcionProyecto />} />
                 <Route path='user/proyectosInscrit' element={<ProyectosInscrit />} />
                 <Route path='user/ProyectosInscrit/masInformacion/:_id' element={<MasInformacion />} />
+                <Route path='user/ProyectosInscrit/masInformacion/:_id/editarAvance/:_id' element={<EditarAvance/>} />
               </Route>
             </Routes>
           </BrowserRouter>
