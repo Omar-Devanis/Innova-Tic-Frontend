@@ -7,6 +7,7 @@ import { AVANCE } from "../../../graphql/avances/queries";
 import { useParams } from "react-router";
 import { useEffect } from "react/cjs/react.development";
 import { useFormData } from "../../../hooks/useFormData";
+import { toast } from "react-toastify";
 
 
 const EditarAvance = () =>{
@@ -40,6 +41,8 @@ const EditarAvance = () =>{
         console.log(">>>",data)
     },[data])
 
+    
+
     if(queryLoading) return (<div>Cargando...</div>)
     return(
         <div className="overlay">
@@ -57,7 +60,7 @@ const EditarAvance = () =>{
                         >
                         <label>Ingrese la descripcion del avance</label>
                         <textarea name="descripcion" rows="5" cols="60"></textarea>
-                        <input type='submit'/>
+                        <input type='submit'onClick={()=>{toast.success("Avance Modificado")}}/>
                     </form>
 
                 </div>
