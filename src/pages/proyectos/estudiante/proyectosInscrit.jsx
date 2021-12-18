@@ -2,7 +2,8 @@ import React, {useEffect} from 'react'
 import { useQuery } from '@apollo/client';
 import { GET_PROYECTOS_EST } from '../../../graphql/inscripciones/queries';
 import { toast } from 'react-toastify';
-import {useUser} from '../../../context/userContext' 
+import {useUser} from '../../../context/userContext'
+import { Link } from 'react-router-dom';
 
 const ProyectosInscrit = () => {
 
@@ -34,13 +35,15 @@ const ProyectosInscrit = () => {
                                 <div className='Info'>
                                     <h3>{e.proyecto.nombre}</h3>
                                     <p>Lider: {e.proyecto.lider.nombre} {e.proyecto.lider.apellido}</p>
-                                    <p>{e.proyecto.fechaInicio}</p>
+                                    <p>{(e.proyecto.fechaInicio).slice(0,10)}</p>
                                     <p>{e.proyecto.estado}</p>
                                     <p>{e.proyecto.fase}</p>
                                 </div>
-                                <div className='btns only'>
-                                    <button className='btn-vermas '>Mas informacion.</button>
-                                </div>
+                                <Link to={`masInformacion/${e.proyecto._id}`}>
+                                    <div className='btns only'>
+                                        <button className='btn-vermas '>Mas informacion.</button>
+                                    </div>    
+                                </Link>
                                 
                             </div>)
                     }
