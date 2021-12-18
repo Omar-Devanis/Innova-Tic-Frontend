@@ -21,4 +21,12 @@ mutation CrearProyecto($nombre: String!, $presupuesto: Float!, $fechaInicio: Dat
 }
 `;
 
-export {EDITAR_PROYECTO, CREAR_PROYECTO}
+const ACTUALIZAR_PROYECTO = gql`
+mutation Mutation($id: String!, $nombre: String, $presupuesto: Float) {
+  actualizarProyecto(_id: $id, nombre: $nombre, presupuesto: $presupuesto) {
+    _id
+  }
+}
+`;
+
+export {EDITAR_PROYECTO, CREAR_PROYECTO, ACTUALIZAR_PROYECTO}

@@ -19,7 +19,7 @@ query ExampleQuery($estudiante: String!){
     }
     }
 
-`
+`;
 
 const INSCRIPCIONES_PROYECTOS = gql`
 query($proyecto: String!){
@@ -31,6 +31,23 @@ query($proyecto: String!){
   }
 }
 
-`
+`;
 
-export {GET_PROYECTOS_EST,INSCRIPCIONES_PROYECTOS }
+const GET_INSCRI_PROYECTO = gql`
+query Query($proyecto: String!) {
+    inscripcionProyecto(proyecto: $proyecto) {
+      _id
+      estado
+      estudiante {
+        _id
+        nombre
+        apellido
+        correo
+        estado
+        rol
+      }
+    }
+  }
+`;
+
+export {GET_PROYECTOS_EST,INSCRIPCIONES_PROYECTOS, GET_INSCRI_PROYECTO }

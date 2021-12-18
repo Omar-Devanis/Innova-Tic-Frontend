@@ -26,5 +26,12 @@ const Enum_Rol = {
     GENERAL: 'GENERAL',
     ESPECIFICO: 'ESPECIFICO',
   };
+
+  const Enum_EstadoInscripcion = {
+    ACEPTADO: 'ACEPTADO',
+    RECHAZADO: 'RECHAZADO',
+    PENDIENTE: 'PENDIENTE',
+
+  };
   
-  export { Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto,Enum_FaseProyecto, Enum_TipoObjetivo };
+  export { Enum_EstadoInscripcion, Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto,Enum_FaseProyecto, Enum_TipoObjetivo };
