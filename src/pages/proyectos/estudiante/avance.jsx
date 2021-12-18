@@ -35,14 +35,16 @@ const MasInformacion = () =>{
             <h2>Nombre Proyecto: {dataQ.proyectoEspecifico.nombre}</h2>
             <p><span>Liderado Por:</span> {dataQ.proyectoEspecifico.lider.nombre} {dataQ.proyectoEspecifico.lider.apellido}</p>
             <p><span>Correo:</span> {dataQ.proyectoEspecifico.lider.correo}</p>
-            <p><span>Fecha Inicio:</span> {dataQ.proyectoEspecifico.fechaInicio}</p>
+            <p><span>Fecha Inicio:</span> {(dataQ.proyectoEspecifico.fechaInicio.slice(0,10))}</p>
             <p><span>Fase del Proyecto:</span> {dataQ.proyectoEspecifico.fase}</p>
             <p><span>Presupuesto</span>: ${dataQ.proyectoEspecifico.presupuesto}</p>
             </header>
             <section>
                 <h3>Avances del proyecto</h3>
                 <div className="nuevoAvance">
-                    <img src={plus} title="Añadir Nuevo Avance"/>
+                    <Link to={"crearAvance"}>
+                        <img src={plus} title="Añadir Nuevo Avance"/>
+                    </Link>
                 </div>
                 <ListaAvances avances={data.filtrarAvance} />
 

@@ -30,6 +30,7 @@ import { InscriProyecto } from "./pages/inscripciones/inscriProyecto.jsx"
 import { SolicituProyecto } from "./pages/inscripciones/solicituProyecto.jsx"
 import { MiProyectoInfo } from "./pages/proyectos/lider/miProyectoInfo.jsx"
 import { AvancesProyecto } from "./pages/proyectos/lider/avancesProyecto.jsx"
+import { CrearAvance } from './pages/proyectos/estudiante/crearAvance';
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -116,6 +117,7 @@ function App() {
                 <Route path='user/proyectosInscrit' element={<ProyectosInscrit />} />
                 <Route path='user/ProyectosInscrit/masInformacion/:_id' element={<MasInformacion />} />
                 <Route path='user/ProyectosInscrit/masInformacion/:_id/editarAvance/:_id' element={<EditarAvance/>} />
+                <Route path='user/ProyectosInscrit/masInformacion/:_id/crearAvance' element={<CrearAvance/>} />
               </Route>
             </Routes>
           </BrowserRouter>
