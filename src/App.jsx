@@ -26,6 +26,10 @@ import EditarProyecto from './pages/proyectos/admin/editarProyecto';
 import SolicitudInscripcionProyecto from './pages/proyectos/estudiante/inscribirProyecto'
 import { MasInformacion} from './pages/proyectos/estudiante/avance';
 import { EditarAvance } from './pages/proyectos/estudiante/editarAvance';
+import { InscriProyecto } from "./pages/inscripciones/inscriProyecto.jsx"
+import { SolicituProyecto } from "./pages/inscripciones/solicituProyecto.jsx"
+import { MiProyectoInfo } from "./pages/proyectos/lider/miProyectoInfo.jsx"
+import { AvancesProyecto } from "./pages/proyectos/lider/avancesProyecto.jsx"
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -102,6 +106,11 @@ function App() {
                 <Route path='lider/crearProyecto' element={<CrearProyecto />} />
                 <Route path='lider/editarProyecto' element={<EditProyectoLider />} />
                 <Route path='lider/estudiantes' element={<UsuariosEst />} />
+                <Route path='lider/misProyectos/inscripciones/:_id' element={<InscriProyecto/>} />
+                <Route path='lider/misProyectos/solicitudes/:_id' element={<SolicituProyecto/>} />
+                <Route path='lider/misProyectos/actualizar/:_id' element={<EditProyectoLider />} />
+                <Route path='lider/misProyectos/info/:_id' element={<MiProyectoInfo />} />
+                <Route path='lider/misProyectos/info/:_id/avances/:_id' element={<AvancesProyecto />} />
                 <Route path='user/todosLosProyectos' element={<ProyectosUser />} />
                 <Route path='user/todosLosProyectos/solicitudP/:_id' element={<SolicitudInscripcionProyecto />} />
                 <Route path='user/proyectosInscrit' element={<ProyectosInscrit />} />

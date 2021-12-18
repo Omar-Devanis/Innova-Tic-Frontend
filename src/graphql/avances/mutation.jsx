@@ -12,4 +12,12 @@ mutation($_id: ID!,$descripcion: String){
 
 `;
 
-export{EDITAR_AVANCE}
+const EDITAR_OBSERVACIONES = gql`
+mutation Mutation($id: ID!, $observaciones: [String]) {
+    agregarObservaciones(_id: $id, observaciones: $observaciones) {
+      _id
+    }
+  }
+`;
+
+export {EDITAR_OBSERVACIONES,EDITAR_AVANCE};

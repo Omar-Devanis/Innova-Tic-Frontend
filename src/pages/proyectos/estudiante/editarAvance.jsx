@@ -7,8 +7,7 @@ import { AVANCE } from "../../../graphql/avances/queries";
 import { useParams } from "react-router";
 import { useEffect } from "react/cjs/react.development";
 import { useFormData } from "../../../hooks/useFormData";
-import { DropDown } from "../../../components/dropDown";
-import { Input } from "../../../components/input"
+
 
 const EditarAvance = () =>{
 
