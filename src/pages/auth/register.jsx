@@ -51,13 +51,15 @@ const Register = () => {
                     clase='boton'
                     />
                 </div>    
+                <div className='enlace'>
+                    <div>
+                        <span className='p'>Tienes cuenta?</span>
+                    </div>
+                    <Link to='/auth/login'>
+                        <span className='p subrayado'>Inicia sesión</span>
+                    </Link>
+                </div>
             </form>
-            <div className='enlace'>
-                <span className='p'>Tienes cuenta?</span>
-                <Link to='/auth/login'>
-                    <span className='p'>Inicia sesión</span>
-                </Link>
-            </div>
         </div>
     )
 }

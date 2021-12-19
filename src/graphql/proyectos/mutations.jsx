@@ -13,7 +13,7 @@ mutation($_id: String!, $estado: Enum_EstadoProyecto, $fase: Enum_FaseProyecto){
 
 const CREAR_PROYECTO = gql`
 
-mutation CrearProyecto($nombre: String!, $presupuesto: Float!, $fechaInicio: Date!, $fechaFin: Date!, $lider: String!) {
+mutation CrearProyecto($nombre: String!, $presupuesto: String!, $fechaInicio: Date!, $fechaFin: Date!, $lider: String!) {
   crearProyecto(nombre: $nombre, presupuesto: $presupuesto, fechaInicio: $fechaInicio, fechaFin: $fechaFin, lider: $lider) {
     _id
     
@@ -22,7 +22,7 @@ mutation CrearProyecto($nombre: String!, $presupuesto: Float!, $fechaInicio: Dat
 `;
 
 const ACTUALIZAR_PROYECTO = gql`
-mutation Mutation($id: String!, $nombre: String, $presupuesto: Float) {
+mutation Mutation($id: String!, $nombre: String, $presupuesto: String) {
   actualizarProyecto(_id: $id, nombre: $nombre, presupuesto: $presupuesto) {
     _id
   }

@@ -11,6 +11,7 @@ import { Input } from "../../../components/input.jsx";
 const CrearProyecto = () => {
     const { userData } = useUser();
     const { form, formData, updateFormData } = useFormData();
+    const lider = userData._id
     
     const [crearProyecto, { data: dataMutation, loading: loadingMutation, error: errorMutation }] =
         useMutation(CREAR_PROYECTO);
@@ -18,7 +19,7 @@ const CrearProyecto = () => {
     const submitForm = (e) => {
         e.preventDefault();
         console.log("formData", formData)
-        crearProyecto({ variables:{lider: userData._id,...formData} });
+        crearProyecto({ variables:{lider,...formData} });
     };
 
     useEffect(()=>{
