@@ -29,6 +29,8 @@ const CrearProyecto = () => {
             if(dataMutation.crearProyecto._id){
                 setEncendido(false)
                 setId(dataMutation.crearProyecto._id)
+                toast.success("Proyecto creado con exito")
+                
             }
         }
     }, [dataMutation])
@@ -39,12 +41,6 @@ const CrearProyecto = () => {
         }
     })
 
-    useEffect(()=>{
-        console.log("proyecto creado", dataMutation)
-        if(dataMutation){
-            toast.success("Proyecto creado con exito")
-        }
-    })
     return (
         <div className="contenedorAU">
             <div className="actualizacionUA">

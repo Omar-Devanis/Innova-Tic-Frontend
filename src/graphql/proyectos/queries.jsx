@@ -26,6 +26,7 @@ query proyectos {
 const GET_PROYECTO = gql`
 query ExampleQuery($_id: String!) {
   proyectoEspecifico(_id:$_id) {
+    _id
     nombre
     lider {
       nombre
