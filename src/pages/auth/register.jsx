@@ -39,7 +39,7 @@ const Register = () => {
             <form className='formulario' onSubmit={submitForm} onChange={updateFormData} ref={form}>
                 <div className='interno'>              
                     <Input label='Nombre' name='nombre' type='text' placeholder='nombre' required={true} />
-                    <Input label='Apellido' name='apellido' type='text' placeholder='apellido' required={true} />
+                    <Input label='Apellidos' name='apellido' type='text' placeholder='apellido' required={true} />
                     <Input label='Documento' name='identificacion' type='text' placeholder='documento de identidad' required={true} />
                     <Input label='Correo' name='correo' type='email' placeholder='correo electronico' required={true} />
                     <Input label='Contraseña' name='password' type='password' placeholder='contraseña' required={true} />
