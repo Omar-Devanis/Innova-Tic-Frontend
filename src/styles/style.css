@@ -32,6 +32,7 @@
     border-radius: 4px;
     color: white;
     font-weight: 950;
+    height: 35px;
     background: #2a0845; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right,  #6441A5, #2a0845);
@@ -55,7 +56,7 @@
     width:100%;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content:space-between;
     font-size: 18px;
     margin:10px 0 0 0;
 }
@@ -636,4 +637,21 @@
 .labelOb>input{
     width: 20%;
     height: 50px;
+}
+
+.bodyProye{
+    background-color: aquamarine;
+}
+
+.botonProy{
+    height: 35px;
+    width: 100%;
+}
+.bodyProye:disabled{
+    background-color: grey;
+    text-decoration: line-through;
+}
+
+.inputProy{
+
 }
