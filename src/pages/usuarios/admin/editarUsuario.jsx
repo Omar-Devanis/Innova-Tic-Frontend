@@ -8,6 +8,8 @@ import {EDITAR_ESTADO_U} from "../../../graphql/usuarios/mutations"
 import { useFormData } from "../../../hooks/useFormData";
 import { DropDown } from "../../../components/dropDown";
 import {Enum_EstadoUsuario} from "../../../utils/enums.js"
+import { Link } from 'react-router-dom'
+
 
 const EditarUsuario = ( )=>{
     const {_id} = useParams()
@@ -56,6 +58,12 @@ const EditarUsuario = ( )=>{
             <div className="actualizacionUA">
                 <div className='headerUA'>
                         <h3>Actulizar Estado Usuario</h3>
+                        <Link to='/admin/usuarios' >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                            </svg>
+                        </Link>
                 </div>
                 <div className="bodyUA">
                 <h3>Nombre Usuario: </h3>

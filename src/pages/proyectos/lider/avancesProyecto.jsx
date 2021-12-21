@@ -4,11 +4,7 @@ import { useParams } from "react-router";
 import { toast } from 'react-toastify';
 import { useQuery} from '@apollo/client';
 import { GET_AVANCE_PROY } from "../../../graphql/avances/queries";
-import { Input } from "../../../components/input.jsx"
-import { useMutation } from "@apollo/client";
-import { EDITAR_OBSERVACIONES } from "../../../graphql/avances/mutation.jsx"
-import { useFormData } from "../../../hooks/useFormData";
-import { ButtonLoading } from "../../../components/botonRe"
+
 
 
 

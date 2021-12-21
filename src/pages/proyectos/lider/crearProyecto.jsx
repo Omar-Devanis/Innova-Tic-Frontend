@@ -29,7 +29,7 @@ const CrearProyecto = () => {
             if(dataMutation.crearProyecto._id){
                 setEncendido(false)
                 setId(dataMutation.crearProyecto._id)
-                toast.success("Proyecto creado con exito")
+                toast.success("Informacion enviada correctamente")
                 
             }
         }
