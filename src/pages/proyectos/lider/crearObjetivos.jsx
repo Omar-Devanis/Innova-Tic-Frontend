@@ -13,9 +13,9 @@ import { Enum_Objetivos } from "../../../utils/enums.js";
 
 
 const CrearObjetivos = () => {
-    const {id} = useParams()
+    const {_id} = useParams()
     const { form, formData, updateFormData } = useFormData();
-    const proyecto = id
+    const proyecto = _id
     
     const [crearObjetivo, { data: dataMutation, loading: loadingMutation, error: errorMutation }] =
         useMutation(CREAR_OBJETIVO);

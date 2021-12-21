@@ -36,7 +36,7 @@ import { CrearAvance } from './pages/proyectos/estudiante/crearAvance';
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'https://servidor-gql-innovatic.herokuapp.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
