@@ -10,7 +10,7 @@ import { useUser } from '../../../context/userContext.js'
 const MisProyectos = () => {
     const { userData } = useUser();
 
-    const {data,error,loanding}=useQuery(GET_MIS_PROYECT, {
+    const {data,error,loading}=useQuery(GET_MIS_PROYECT, {
         variables: {lider: userData._id}
     });
 
@@ -25,7 +25,7 @@ const MisProyectos = () => {
         }
     })
     
-    if (loanding) return <div>Cargando...</div>
+    if (loading) return <div>Cargando...</div>
     return (
     <div className='proyectoEst'>
     {data && data.proyectosLiderados ?(
@@ -85,7 +85,7 @@ const MisProyectos = () => {
             )}
         </>
     ):(
-        <div>No autorizado</div>
+        <div>No se encontraron proyectos</div>
     )}
                     
     </div>

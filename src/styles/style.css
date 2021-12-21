@@ -647,11 +647,15 @@
     height: 35px;
     width: 100%;
 }
+.botonProy:hover{
+    cursor: pointer;
+}
+.botonProy:disabled{
+    cursor: default;
+}
+
 .bodyProye:disabled{
     background-color: grey;
     text-decoration: line-through;
 }
 
-.inputProy{
-
-}
