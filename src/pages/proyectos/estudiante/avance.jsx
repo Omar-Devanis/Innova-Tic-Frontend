@@ -11,6 +11,7 @@ const MasInformacion = () =>{
  
     const {_id} = useParams()
     const {userData} = useUser()
+    console.log(userData._id)
 
     const{data:dataQ,error:errorQ,loading:loadingQ} = useQuery(GET_PROYECTO,{variables:{
         _id
@@ -28,7 +29,7 @@ const MasInformacion = () =>{
         console.log("La info del pro: ",dataQ)
     },[dataQ])
 
-    if(loadingQ)return(<div>Cargando...</div>)
+    if(loading || loadingQ)return(<div>Cargando...</div>)
     return(
         <div className="avances">
             <header className="Head">
