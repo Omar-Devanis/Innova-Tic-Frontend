@@ -34,6 +34,7 @@ query ExampleQuery($_id: String!) {
       correo
     }
     fechaInicio
+    fechaFin
     presupuesto
     fase
     estado

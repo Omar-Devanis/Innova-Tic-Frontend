@@ -367,7 +367,7 @@
 
 .contenedorAU{
     width:100%;
-    height:100%;
+    height:100hv;
     background-color:#222;
     display: flex;
     justify-content: center;
@@ -606,9 +606,12 @@
 }
 
 .cajaAvance{
+    display: flex;
+    flex-direction: column;
     margin-bottom:20px;
     padding-bottom:20px;
     border-bottom:1px solid #E8E8E8;
+    gap: 10px;
 
 }
 
@@ -620,6 +623,15 @@
     color: white;
 }
 .boton2:hover{
+    cursor: pointer;
+}
+
+.boton3{
+    height: 30px;
+    background-color: #ce99fa;
+    font-weight: 950;
+}
+.boton3:hover{
     cursor: pointer;
 }
 

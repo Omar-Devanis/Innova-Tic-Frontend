@@ -24,7 +24,7 @@ const MiProyectoInfo = () => {
         <div className="contenedorAU">
             <div className="actualizacionUA">
                 <div className='headerUA'>
-                        <h3>Actualizar estado y fase del proyecto</h3>
+                        <h3>Informacion del proyecto</h3>
                         <Link to='/lider/misProyectos' >
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
@@ -32,7 +32,7 @@ const MiProyectoInfo = () => {
                             </svg>
                         </Link>
                 </div>
-                    <div className="bodyUA">
+                    <div className="bodyUA cajaAvance">
                     <h3>Nombre Proyecto: </h3>
                     <p>{queryData.proyectoEspecifico.nombre} {}</p>
                     <h3>Lider Proyecto: </h3>
@@ -49,10 +49,10 @@ const MiProyectoInfo = () => {
                     <p>{queryData.proyectoEspecifico.estado}</p>
                     <h3>fase: </h3>
                     <p>{queryData.proyectoEspecifico.fase}</p>
+                    <Link to={`/lider/misProyectos/info/avances/${queryData.proyectoEspecifico._id}`}>
+                        <button className="boton3">Avances</button>
+                    </Link>
                 </div>
-                <Link to={`avances/${queryData.proyectoEspecifico._id}`}>
-                    <button>Avances</button>
-                </Link>
             
             </div>
         </div>

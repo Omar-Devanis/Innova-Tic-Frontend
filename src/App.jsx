@@ -31,6 +31,7 @@ import { SolicituProyecto } from "./pages/inscripciones/solicituProyecto.jsx"
 import { MiProyectoInfo } from "./pages/proyectos/lider/miProyectoInfo.jsx"
 import { AvancesProyecto } from "./pages/proyectos/lider/avancesProyecto.jsx"
 import { CrearObjetivos } from "./pages/proyectos/lider/crearObjetivos.jsx"
+import { CrearObservacion } from "./pages/proyectos/lider/crearObservacion"
 import { CrearAvance } from './pages/proyectos/estudiante/crearAvance';
 
 // import PrivateRoute from 'components/PrivateRoute';
@@ -113,7 +114,8 @@ function App() {
                 <Route path='lider/misProyectos/solicitudes/:_id' element={<SolicituProyecto/>} />
                 <Route path='lider/misProyectos/actualizar/:_id' element={<EditProyectoLider />} />
                 <Route path='lider/misProyectos/info/:_id' element={<MiProyectoInfo />} />
-                <Route path='lider/misProyectos/info/:_id/avances/:_id' element={<AvancesProyecto />} />
+                <Route path='lider/misProyectos/info/avances/:_id' element={<AvancesProyecto />} />
+                <Route path='lider/misProyectos/info/avances/:_id/observacion/:_id' element={<CrearObservacion />} />
                 <Route path='user/todosLosProyectos' element={<ProyectosUser />} />
                 <Route path='user/todosLosProyectos/solicitudP/:_id' element={<SolicitudInscripcionProyecto />} />
                 <Route path='user/proyectosInscrit' element={<ProyectosInscrit />} />

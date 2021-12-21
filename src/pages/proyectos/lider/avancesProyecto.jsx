@@ -51,7 +51,9 @@ const AvancesProyecto = () => {
                                 <p>{f.creadoPor.nombre} {f.creadoPor.apellido}</p>
                                 <h3>Correo: </h3>
                                 <p>{f.creadoPor.correo}</p>
-                                <Observaciones id={f._id} text='Agregar observacion'/>
+                                <Link to={`observacion/${f._id}`} >
+                                    <button className="boton3">crear observacion</button>
+                                </Link>
                             </div>
                         )}else{
                             return(
@@ -66,7 +68,9 @@ const AvancesProyecto = () => {
                                     <p>{f.creadoPor.correo}</p>
                                     <h3>observaciones: </h3>
                                     <p>{f.observaciones}</p>
-                                    <Observaciones id={f._id} text='Actualizar observacion'/>
+                                    <Link to={`observacion/${f._id}`} >
+                                        <button className="boton3">Actualizar observacion</button>
+                                    </Link>
                                 </div>
                             )
                         }
@@ -83,52 +87,4 @@ const AvancesProyecto = () => {
 
 export  {AvancesProyecto};
 
-const Observaciones = (({id, text}) =>{
-    const { form, formData, updateFormData } = useFormData()
-
-    const [editAvance, { data: dataMutation, loading: loadingMutation, error: errorMutation }] =
-        useMutation(EDITAR_OBSERVACIONES);
-
-        const submitForm = (e) => {
-            e.preventDefault();
-            console.log("formData", formData)
-            editAvance({ variables:{id,...formData} });
-        };
-        useEffect(() => {
-            if (dataMutation) {
-                toast.success('observacion agregada');
-            }
-        }, [dataMutation]);
-        useEffect(() => {
-            if (errorMutation) {
-                toast.error('Error agregando observacion');
-            }
-        }, [errorMutation]);
-    return (
-        <div>
-            <form 
-            onSubmit={submitForm}
-            onChange={updateFormData}
-            ref={form}
-            id='formulario'
-            className="formObser"
-            >
-            <label htmlFor='observaciones' className="labelOb">
-                <h5>Agregar observacion:</h5>
-                <input 
-                type='text'
-                name='observaciones'
-                className='inpuOb' 
-                />
-            </label>
-                <ButtonLoading
-                disabled={Object.keys(formData).length === 0}
-                loading={loadingMutation}
-                text={text}
-                clase='boton2'
-                />               
-            </form>
-        </div>
-    )
-})
 
