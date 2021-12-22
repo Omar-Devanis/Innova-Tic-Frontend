@@ -11,6 +11,7 @@ query($idProyecto: String!){
       }
       descripcion
       fecha
+      observaciones
     }
   }
 `;

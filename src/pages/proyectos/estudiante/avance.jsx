@@ -68,6 +68,8 @@ const ListaAvances = (avances)=>{
                 <div className="informacionA"> 
                     <p>Descripcion: {a.descripcion}</p>
                     <p>creado por {a.creadoPor.nombre} {a.creadoPor.apellido} el {(a.fecha).slice(0,10)}</p>
+                    <h6>observaciones: </h6>
+                    <p>{a.observaciones}</p>
                 </div>
                 
                 <div className='iconEdit'>

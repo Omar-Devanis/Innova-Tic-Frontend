@@ -30,6 +30,7 @@ const ProyectosInscrit = () => {
             <>
                 {data.inscripcionEstudiante.map((e) =>{
                         console.log('data servidor',data)
+                        if (e.estado === "ACEPTADO") {
                         return(
                             <div className="tarjeta" key={e.proyecto._id}>
                                 <div className='Info'>
@@ -45,12 +46,29 @@ const ProyectosInscrit = () => {
                                     </div>    
                                 </Link>
                                 
-                            </div>)
+                            </div>
+                        )}else {
+                            return (
+                                <div className="tarjeta" key={e.proyecto._id}>
+                                <div className='Info'>
+                                    <h3>{e.proyecto.nombre}</h3>
+                                    <p>Lider: {e.proyecto.lider.nombre} {e.proyecto.lider.apellido}</p>
+                                    <p>{(e.proyecto.fechaInicio).slice(0,10)}</p>
+                                    <p>{e.proyecto.estado}</p>
+                                    <p>{e.proyecto.fase}</p>
+                                </div>
+                                    <div className='btns only'>
+                                        <button className='btn-vermas ' disabled >{e.estado}</button>
+                                    </div>    
+                                
+                            </div>
+                            )
+                        }
                     }
                 )}
             </>
         ):(
-            <div>No autorizado</div>
+            <div>No se encontraron proyectos</div>
         )}
                         
         </div>
