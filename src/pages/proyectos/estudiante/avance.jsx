@@ -25,9 +25,6 @@ const MasInformacion = () =>{
         console.log(">>>",data)
     },[data])
 
-    useEffect(()=>{            
-        console.log("La info del pro: ",dataQ)
-    },[dataQ])
 
     if(loading || loadingQ)return(<div>Cargando...</div>)
     return(
@@ -57,12 +54,12 @@ const MasInformacion = () =>{
 
 const ListaAvances = (avances)=>{
     console.log("---",avances.avances.length)
+    const {userData} = useUser()
 
     let descripcion;
     if(avances.avances.length > 0){
         descripcion = <>
         {avances.avances.map((a)=>{
-            console.log("este es el id",a._id)
             return(
             <div className="positive" key={a._id}>
                 <div className="informacionA"> 
@@ -80,7 +77,8 @@ const ListaAvances = (avances)=>{
                     </Link>                           
                 </div>
                 
-            </div>)        
+            </div>
+            )  
         })
     
         }

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { GET_PROYECTO } from '../../../graphql/proyectos/queries.jsx'
 import { useQuery} from '@apollo/client';
+import { PrivateRoute } from '../../../components/PrivateRoute.jsx';
+
 
 const MiProyectoInfo = () => {
     const {_id} = useParams()
@@ -21,8 +23,11 @@ const MiProyectoInfo = () => {
     if (queryLoading) return <div>Cargando...</div>
 
     return (
+        <PrivateRoute roleList={
+            ["LIDER"]
+        }>
         <div className="contenedorAU">
-            <div className="actualizacionUA">
+            <div className="actualizacionUA continf2">
                 <div className='headerUA'>
                         <h3>Informacion del proyecto</h3>
                         <Link to='/lider/misProyectos' >
@@ -56,7 +61,9 @@ const MiProyectoInfo = () => {
             
             </div>
         </div>
+        </PrivateRoute>
     )
 }
 
 export {MiProyectoInfo};
+

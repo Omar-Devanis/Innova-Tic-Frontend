@@ -28,7 +28,7 @@ const CrearAvance = ()=>{
         crearAvance({
             variables:{proyecto:_id,creadoPor:userData._id,...formData}
         })} 
-
+    if(loading) return <div>Cargando...</div>
     return (
         <div className="overlay">
             <div className="contenedorModal">

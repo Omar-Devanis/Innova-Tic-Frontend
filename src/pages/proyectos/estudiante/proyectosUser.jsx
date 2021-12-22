@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const ProyectosUser = () => {
 
-    const{data,error,loanding}=useQuery(GET_PROYECTOS);
+    const{data,error,loading}=useQuery(GET_PROYECTOS);
     
     useEffect(()=>{
         console.log(data)
@@ -19,7 +19,7 @@ const ProyectosUser = () => {
         }
     })
     
-    if (loanding) return <div>Cargando...</div>
+    if (loading) return <div>Cargando...</div>
     return (<div className='proyectoEst'>
                 <div className="title">Proyectos</div>
     {data && data.Proyectos ?(
